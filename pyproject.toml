@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pvpltools"
+dynamic = ["version"]
+dependencies = [
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "pvlib",
+  "PyYAML",
+  "scipy",
+]
+requires-python = ">=3.7"
+authors = [
+  {name = "Anton Driesse", email = "anton.driesse@pvperformancelabs.com"},
+]
+description = "Useful tools for photovoltaics and beyond."
+readme = "README.md"
+keywords = ["photovoltaics", "tools", "pv"]
+classifiers = [
+  "Programming Language :: Python",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Development Status :: 4 - Beta",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+docs = [
+    "sphinx~=7.4",
+    "pydata-sphinx-theme~=0.15",
+    "sphinx-gallery~=0.18",
+    "sphinx_toggleprompt~=0.5",
+    "sphinx_favicon~=1.0"
+]
+all = ["pvpltools[test,docs]"]
+
+[project.urls]
+"Homepage" = "https://github.com/adriesse/pvpltools"
+# "Documentation" = ""  # TODO: after RTD release
+"Repository" = "https://github.com/adriesse/pvpltools"
+"Bug Tracker" = "https://github.com/adriesse/pvpltools/issues"
+# "Changelog" = ""  # TODO: after RTD release
+
+[tool.setuptools_scm]

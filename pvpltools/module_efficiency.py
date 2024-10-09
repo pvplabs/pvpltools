@@ -541,7 +541,7 @@ def fit_bilinear(irradiance, temperature, eta):
     """
     # (re)construct the matrix as a grid for the BilinearInterpolator
     data = pd.DataFrame([irradiance, temperature, eta]).T
-    grid = data.pivot(*data.columns)
+    grid = data.pivot(columns=data.columns[0], index=data.columns[1], values=data.columns[2])
 
     # now create the interpolator object
     interpolator = BilinearInterpolator(grid)

@@ -63,7 +63,7 @@ def convert_to_banded(spectral_reponse):
     The mean value for each band is calculated as the area under the
     linearly interpolated spectral response (SR) curve between band edges,
     divided by the width of the band.  The band edges are defined in
-    IEC 61853-4. [1]
+    IEC 61853-4. [1]_
 
     Parameters
     ----------
@@ -102,7 +102,7 @@ def convert_to_banded(spectral_reponse):
 
     # insert extra points into the SR at the band edges
     extra_wavelengths = set(band_edges) - set(sr.index)
-    sr = sr.append(pd.Series(np.nan, extra_wavelengths))
+    sr = pd.concat((sr, pd.Series(np.nan, extra_wavelengths)))
     sr = sr.sort_index()
     sr = sr.clip(0.0)
     sr = sr.interpolate(method='index', limit_area='inside')
@@ -163,7 +163,7 @@ def calc_spectral_factor(banded_irradiance, banded_responsivity,
     Notes
     -----
     The calculation method used here does not correspond precisely to the
-    description in IEC 61853-3 [1] because the latter has inconsistencies.
+    description in IEC 61853-3 [1]_ because the latter has inconsistencies.
     In particular:
 
     - The standard specifies the limits of 300 and 4000 nm for integration.
@@ -171,7 +171,7 @@ def calc_spectral_factor(banded_irradiance, banded_responsivity,
       data are 306.8 and 4605.65 nm, and there is no band edge at 4000 nm;
       therefore, it is not possible to integrate using the specified limits.
 
-    - The broadband reference irradiance in eq. 6 of [1] is 1000 W/m².
+    - The broadband reference irradiance in eq. 6 of [1]_ is 1000 W/m².
     - This implies integration limits of 280 nm and infinity for AM15G.
 
     - The broadband irradiance in the climate profiles (also used in eq. 6)
@@ -187,7 +187,7 @@ def calc_spectral_factor(banded_irradiance, banded_responsivity,
 
     Using the default option, `integration_limit=None`, eq. 6 is taken at face
     value and the implied integration limits are used.  This is equivalent
-    to the recommendation in [2].
+    to the recommendation in [2]_.
 
     It is also possible to set the `integration_limit` to a specific band
     number, which is then used as upper limit for all four integrals
@@ -246,7 +246,7 @@ class BilinearInterpolator(RegularGridInterpolator):
     of irradiance and temperature. The matrix may be completely filled,
     or there may be missing values at high irradiance/low temperature,
     or at low irradiance/high temperature combinations.  These are filled in
-    using the method described in [1], which ensures a continuous
+    using the method described in [1]_, which ensures a continuous
     interpolation/extrapolation surface.
 
     Parameters
@@ -303,7 +303,7 @@ class BilinearInterpolator(RegularGridInterpolator):
 
     def __init__(self, matrix):
 
-        m = matrix.sort_index(0).sort_index(1)
+        m = matrix.sort_index(axis=0).sort_index(axis=1)
 
         num_iterations = max(m.shape) - 1
 
@@ -515,8 +515,8 @@ def martin_ruiz_diffuse(surface_tilt, a_r=0.16, c1=None, c2=None):
 def faiman(poa_global, temp_air, wind_speed=1.0, u0=25.0, u1=6.84):
     '''
     Calculate cell or module temperature using an empirical heat loss factor
-    model as proposed by Faiman [1] and adopted in the IEC 61853
-    standards [2] and [3].
+    model as proposed by Faiman [1]_ and adopted in the IEC 61853
+    standards [2]_ and [3]_.
 
     Usage of this model in the IEC 61853 standard does not distinguish
     between cell and module temperature.

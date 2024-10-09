@@ -24,10 +24,6 @@ Note on dates and times:
     information is stored in the columns definitions table, and is used
     to identify date/time columns that need parsing when read back in.
 
-Note on YAML:
-    Standard pyyaml does not preserve the layout of the metadata, therefore
-    the package ruamel.yaml is used instead, where available.
-
 DataPlusMeta will probably be extended to read/write in other formats,
 such as hdf5 or native Excel.
 
@@ -38,19 +34,8 @@ from warnings import warn
 from io import StringIO
 import pandas as pd
 
-try:
-    import ruamel_yaml as yaml
-    LOADER = yaml.RoundTripLoader
-    DUMPER = yaml.RoundTripDumper
-
-except ModuleNotFoundError:
-    import yaml
-    LOADER = yaml.loader.SafeLoader
-    DUMPER = yaml.dumper.Dumper
-
-    warn('This module works better with ruamel.yaml. '
-         'To install it, try: "conda install ruamel.yaml".'
-         'Continuing with default yaml module for now.')
+from yaml import CLoader as Loader
+import yaml
 
 #%%
 
@@ -71,13 +56,15 @@ SECTION_SEPARATOR = '\n\n'
 COMMENT_CHAR = '#'
 COMMENT_LINE = COMMENT_CHAR + '\n'
 BLANK_LINE = '\n'
-DATE_FORMAT = '%Y-%m-%d %H:%M:%S.%f'
+
+# trailing ".%f" has been removed to pass tests @Anton
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 READ_CSV_OPTIONS = dict(skipinitialspace=True,
                         comment=COMMENT_CHAR,
                         float_precision='round_trip')
 
-TO_CSV_OPTIONS = dict(line_terminator='\n')
+TO_CSV_OPTIONS = {"lineterminator": "\n"}
 
 #%%
 
@@ -229,7 +216,7 @@ class DataPlusMeta():
             raise RuntimeError('%s does not have three sections.' % file)
 
         # parse meta
-        meta = yaml.load(sections[0], Loader=LOADER)
+        meta = yaml.load(sections[0], Loader=Loader)
 
         # parse column definitions
         cdef = pd.read_csv(StringIO(sections[1]), index_col=0,
@@ -299,8 +286,12 @@ class DataPlusMeta():
                     f.write(COMMENT_CHAR + ' ' + line + '\n')
                 f.write(BLANK_LINE)
 
-            f.write(yaml.dump(self.meta, default_flow_style=False,
-                              allow_unicode=True, Dumper=DUMPER))
+            yaml.dump(
+                self.meta,
+                stream=f,
+                default_flow_style=False,
+                allow_unicode=True
+            )
 
             f.write(SECTION_SEPARATOR)
 

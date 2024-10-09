@@ -40,14 +40,19 @@ A quick overview:
 	- dataplusmeta.py
 		- a simple way to pack data and essential meta-data into a single text file
 
-- data/
-	- nrel_mpert/
-		- module measurements, model parameters and other data in DataPlusMeta style
+	- data/
+		- nrel_mpert/
+			- module measurements, model parameters and other data in DataPlusMeta style
+
+	- tests/
+		- test files for the functions in the main module, to be run with `pytest`
 
 - examples/
     - module_efficiency_demo.ipynb
     - dataplusmeta_demo.py
 
+- docs/
+	- sphinx project files and documentation auxiliary files, user guide, etc.
 
 Development status
 ------------------
@@ -88,7 +93,7 @@ When referring to this software in either academic or commercial context,
 please use a citation similar to the following:
 
 - A. Driesse,
-"PV Performance Labs Tools for Python", (2020), GitHub repository,  https://github.com/adriesse/pvpltools-python
+"PV Performance Labs Tools for Python", (2020), GitHub repository,  https://github.com/pvplabs/pvpltools
 
 When referring to specific functions, docs strings or algorithms,
 please add specifics to the citation.
@@ -102,7 +107,7 @@ and compares it to the IEC 61853 efficiency matrix interpolation/extrapolation m
 
 [102]: https://pvpmc.sandia.gov/download/7737/
 
-Additional publications related to the contents of pvpltools-python
+Additional publications related to the contents of pvpltools
 will be listed here as they become available.
 
 
@@ -122,16 +127,6 @@ parts of which I use very frequently in the context of my work.
 
 Getting help
 ------------
-
-I expect that most potential users will have sufficient knowledge of github and python
-that they will be able successfully clone or download, install and `import pvpltools`.
-
-If that's not you, then:
-
- - click on the green `Clone or download` button and download everything as a zip file
- - unzip the contents somewhere on your computer
- - add the directory called `pvpltools-python-master` to your python search path
- - try `import pvpltools`
 
 The doc strings within the code are currently the primary source of documentation.
 
