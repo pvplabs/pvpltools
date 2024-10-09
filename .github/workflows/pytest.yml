@@ -65,6 +65,8 @@ jobs:
       - name: Upload coverage report
         uses: codecov/codecov-action@v4
         # only upload coverage report once, for the minimal version of dependencies
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.8'
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.8' && matrix.suffix == '-min'
         with:
           fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
