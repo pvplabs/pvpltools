@@ -18,6 +18,13 @@ jobs:
           - os: ubuntu-latest
             python-version: "3.8"
             suffix: -min
+          - os: ubuntu-22.04  # last runner to include Python 3.7
+            python-version: "3.7"
+            suffix: -min
+        exclude:
+          - os: macos-latest
+            python-version: "3.8"
+            suffix: ""
 
     runs-on: ${{ matrix.os }}
     env:
