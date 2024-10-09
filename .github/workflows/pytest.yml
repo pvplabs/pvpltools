@@ -5,6 +5,14 @@ on:
   push:
     branches:
     - main
+  schedule:
+    # Run every Monday at 3:42 AM UTC
+    # Note cron-scheduled workflows will get disabled under specific circumstances, see:
+    # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#schedule
+    # specifically:
+    # - "If the repository is public and the repository is inactive for 60 days"
+    # - "When the last user to commit to the cron schedule of a workflow is removed from the organization"
+    - cron: '42 03 * * MON'
 
 jobs:
   test:
