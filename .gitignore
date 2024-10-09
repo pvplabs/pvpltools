@@ -5,6 +5,8 @@ docs/api_reference/generated/
 docs/autogen_examples/
 # sphinx-gallery execution summary
 docs/sg_execution_times.rst
+# extra environment folders
+venv*/
 
 ## Python project .gitignore file template
 # Byte-compiled / optimized / DLL files

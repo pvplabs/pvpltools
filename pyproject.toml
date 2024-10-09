@@ -10,10 +10,10 @@ dependencies = [
   "numpy",
   "pandas",
   "pvlib",
-  "PyYAML",
+  "PyYAML>=5.1.2",
   "scipy",
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 authors = [
   {name = "Anton Driesse", email = "anton.driesse@pvperformancelabs.com"},
 ]
