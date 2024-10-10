@@ -515,11 +515,10 @@ def martin_ruiz_diffuse(surface_tilt, a_r=0.16, c1=None, c2=None):
 def faiman(poa_global, temp_air, wind_speed=1.0, u0=25.0, u1=6.84):
     '''
     Calculate cell or module temperature using an empirical heat loss factor
-    model as proposed by Faiman [1]_ and adopted in the IEC 61853
-    standards [2]_ and [3]_.
+    model as proposed by Faiman and adopted in the IEC 61853 standard.
 
-    Usage of this model in the IEC 61853 standard does not distinguish
-    between cell and module temperature.
+    Model is described in [1]_ and its usage in the IEC 61853 standards [2]_
+    and [3]_ does not distinguish between cell and module temperature.
 
     Parameters
     ----------
