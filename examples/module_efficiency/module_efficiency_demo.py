@@ -42,7 +42,9 @@ matplotlib.rcParams["lines.linewidth"] = 2
 # the PVPMC website at https://pvpmc.sandia.gov/download/7701/.
 
 # this is the filename of the data file under "examples/data"
-measurements_file = cwd.parent / "data" / "Sandia_PV_Module_P-Matrix-and-TempCo-Data_2019.xlsx"
+measurements_file = cwd.parent.joinpath(
+    "data", "Sandia_PV_Module_P-Matrix-and-TempCo-Data_2019.xlsx"
+)
 
 # The first sheet is for the Panasonic HIT module
 TYPE = "Panasonic HIT"

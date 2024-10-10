@@ -1,0 +1,23 @@
+# file provided from https://github.com/py-actions/flake8, adapted to this project
+name: flake8 Lint
+
+on:
+  push:
+  pull_request:
+
+env:
+  python-version: "3.12"
+
+jobs:
+  flake8-lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.python-version }}
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2

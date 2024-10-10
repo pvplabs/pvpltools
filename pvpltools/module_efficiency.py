@@ -55,7 +55,8 @@ def fit_efficiency_model(irradiance, temperature, eta, model, p0=None,
     -------
     popt : array
         Optimal values for the parameters so that the sum of the squared
-        residuals of ``model(irradiance, temperature, *popt) - eta`` is minimized.
+        residuals of ``model(irradiance, temperature, *popt) - eta`` is
+        minimized.
 
     pcov : 2-D array
         The estimated covariance of popt. See `curve_fit` for details.
@@ -88,7 +89,7 @@ def fit_efficiency_model(irradiance, temperature, eta, model, p0=None,
         sig = inspect.signature(model)
         p0 = np.zeros(len(sig.parameters) - 2)
 
-    if not 'method' in kwargs:
+    if 'method' not in kwargs:
         kwargs['method'] = 'trf'
 
     def model_wrapper(xdata, *params):
@@ -177,20 +178,20 @@ def adr(irradiance, temperature, k_a, k_d, tc_d, k_rs, k_rsh):
 
     # obtain the difference from reference temperature
     T_REF = 25
-    dt   = t - T_REF
-    t_abs = t + 273.15
+    dt = t - T_REF
+    # t_abs = t + 273.15  # TODO: @Anton, this one is not used, a bug?
 
     # equation 29 in JPV
-    s_o     = 10**(k_d + (tc_d * dt))
+    s_o = 10**(k_d + (tc_d * dt))
     s_o_ref = 10**(k_d)
 
     # equation 28 and 30 in JPV
     # the constant k_v does not appear here because it cancels out
-    v  = np.log(s / s_o     + 1)
+    v = np.log(s / s_o + 1)
     v /= np.log(1 / s_o_ref + 1)
 
     # equation 25 in JPV
-    eta  = k_a * ((1 + k_rs + k_rsh) * v - k_rs * s - k_rsh * v**2)
+    eta = k_a * ((1 + k_rs + k_rsh) * v - k_rs * s - k_rsh * v**2)
 
     return eta
 
@@ -330,10 +331,8 @@ def motherpv(irradiance, temperature, a, b, c, d, gamma_ref, aa, bb):
     s = g / 1000
     dt = t - 25
 
-    eta = ( 1 + a * (s - 1)    + b * log(s)
-              + c * (s - 1)**2 + d * log(s)**2
-          )
-    gamma = gamma_ref * ( 1 + aa * (s - 1) + bb * log(s))
+    eta = 1 + a * (s - 1) + b * log(s) + c * (s - 1) ** 2 + d * log(s) ** 2
+    gamma = gamma_ref * (1 + aa * (s - 1) + bb * log(s))
 
     eta *= 1 + gamma * dt
 
@@ -396,15 +395,13 @@ def pvgis(irradiance, temperature, k1, k2, k3, k4, k5, k6):
     g = g / 1000
     dt = t - 25
 
-    eta = ( 1
-            + k1 * log(g)
-            + k2 * log(g)**2
-            + dt * (k3
-                    + k4 * log(g)
-                    + k5 * log(g)**2
-                    )
-            + k6 * dt**2
-          )
+    eta = (
+        1
+        + k1 * log(g)
+        + k2 * log(g) ** 2
+        + dt * (k3 + k4 * log(g) + k5 * log(g) ** 2)
+        + k6 * dt**2
+    )
 
     return eta
 
@@ -541,7 +538,9 @@ def fit_bilinear(irradiance, temperature, eta):
     """
     # (re)construct the matrix as a grid for the BilinearInterpolator
     data = pd.DataFrame([irradiance, temperature, eta]).T
-    grid = data.pivot(columns=data.columns[0], index=data.columns[1], values=data.columns[2])
+    grid = data.pivot(
+        columns=data.columns[0], index=data.columns[1], values=data.columns[2]
+    )
 
     # now create the interpolator object
     interpolator = BilinearInterpolator(grid)
@@ -590,4 +589,3 @@ def bilinear(irradiance, temperature, interpolator):
     Author: Anton Driesse, PV Performance Labs
     """
     return interpolator(irradiance, temperature)
-

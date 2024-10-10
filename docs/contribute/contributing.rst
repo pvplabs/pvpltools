@@ -14,7 +14,7 @@ Reporting issues
 
 If you find a bug or have a feature request, please open an issue on the
 `GitHub issue tracker`_. When reporting a bug, please include a minimal
-reproducible example.
+reproducible example and the OS, Python, and package versions you are using.
 
 .. _GitHub issue tracker:
     https://github.com/pvplabs/pvpltools/issues
@@ -35,7 +35,8 @@ Consider creating a virtual environment before installing the dependencies:
 .. code-block:: bash
 
     python -m venv .venv
-    source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+    source .venv/bin/activate  # for Linux
+    .venv\Scripts\activate  # for Windows
 
 Install the optional dependencies in editable mode:
 
@@ -50,6 +51,13 @@ Line-length should be limited to 79 characters. In general, try to follow the
 `PEP 8`_ style guide.
 
 .. _PEP 8: https://pep8.org/
+
+We use `flake8`_ to enforce the code style. To check the code style, run the
+following command from the root of the repository:
+
+.. code-block:: bash
+
+    python -m flake8
 
 Testing
 -------
@@ -81,3 +89,14 @@ command from the root of the repository (``pvpltools/``):
 The documentation will be built in the ``docs/_build/html`` directory.
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
+
+Pull requests and CI/CD workflows
+---------------------------------
+
+This project uses GitHub Actions to make sure the previous guidelines are
+followed. When you submit a pull request, the CI/CD workflows will run
+automatically and check the code style, run the tests, and build the
+documentation.
+
+You will be able to see the status of the workflows on the pull request page,
+as well to a link to the documentation build.

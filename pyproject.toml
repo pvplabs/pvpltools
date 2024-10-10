@@ -30,7 +30,8 @@ classifiers = [
 [project.optional-dependencies]
 test = [
     "pytest",
-    "pytest-cov"
+    "pytest-cov",
+    "flake8",
 ]
 docs = [
     "sphinx~=7.4",
@@ -42,10 +43,13 @@ docs = [
 all = ["pvpltools[test,docs]"]
 
 [project.urls]
-"Homepage" = "https://github.com/pvlabs/pvpltools"
-# "Documentation" = ""  # TODO: after RTD release
+"Homepage" = "https://pvpltools.readthedocs.io/en/latest/"
+"Documentation" = "https://pvpltools.readthedocs.io/en/latest/"
 "Repository" = "https://github.com/pvlabs/pvpltools"
 "Bug Tracker" = "https://github.com/pvlabs/pvpltools/issues"
-# "Changelog" = ""  # TODO: after RTD release
+"Changelog" = "https://pvpltools.readthedocs.io/en/latest/"
 
 [tool.setuptools_scm]
+
+[tool.flake8]
+max-line-length = 79
