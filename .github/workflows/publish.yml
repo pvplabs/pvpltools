@@ -1,4 +1,4 @@
-name: Build distribution
+name: Build-n-publish distribution
 
 on:
   pull_request:
