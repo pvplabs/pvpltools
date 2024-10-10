@@ -39,7 +39,7 @@ SPECTRAL_BAND_EDGES = (
      306.8,  327.8,  362.5,  407.5,  452.0,  517.7,  540.0,  549.5,
      566.6,  605.0,  625.0,  666.7,  684.2,  704.4,  742.6,  791.5,
      844.5,  889.0,  974.9, 1045.7, 1194.2, 1515.9, 1613.5, 1964.8,
-    2153.5, 2275.2, 3001.9, 3635.4, 3991.0, 4605.65
+     2153.5, 2275.2, 3001.9, 3635.4, 3991.0, 4605.65
     )
 
 # This constant defines irradiance of the AM15G spectrum in each of the 29
@@ -47,14 +47,13 @@ SPECTRAL_BAND_EDGES = (
 # NB: the value in the last band represents only the range 3991-4000nm.
 
 BANDED_AM15G = (
-     3.69618,  16.60690,  34.22227,  56.13480, 101.36658,  33.98919,
-    14.45719,  25.91979,  56.57334,  29.05096,  58.35457,  24.50170,
-    25.22513,  45.09050,  52.90410,  52.42015,  42.28474,  47.29518,
-    49.45154,  61.54425,  67.93106,  24.83419,  34.04581,  13.98155,
+     3.69618,   16.60690,  34.22227,  56.13480,  101.36658,  33.98919,
+     14.45719,  25.91979,  56.57334,  29.05096,  58.35457,   24.50170,
+     25.22513,  45.09050,  52.90410,  52.42015,  42.28474,   47.29518,
+     49.45154,  61.54425,  67.93106,  24.83419,  34.04581,   13.98155,
      9.11025,   9.07606,   4.22986,   3.04112,   0.06470
     )
 
-#%%
 
 def convert_to_banded(spectral_response):
     """
@@ -225,18 +224,16 @@ def calc_spectral_factor(banded_irradiance, banded_responsivity,
         integrated_am15g = np.sum(mask * BANDED_AM15G)
 
     with np.errstate(invalid='ignore'):
-        uf_real = np.sum(mask * banded_irradiance * banded_responsivity, -1) \
-                / np.sum(mask * banded_irradiance, -1)
+        uf_real = (np.sum(mask * banded_irradiance * banded_responsivity, -1)
+                   / np.sum(mask * banded_irradiance, -1))
 
-        uf_am15 = np.sum(mask * BANDED_AM15G * banded_responsivity) \
-                / integrated_am15g
+        uf_am15 = (np.sum(mask * BANDED_AM15G * banded_responsivity)
+                   / integrated_am15g)
 
     spectral_factor = uf_real / uf_am15
 
     return spectral_factor
 
-
-#%%
 
 class BilinearInterpolator(RegularGridInterpolator):
     """
@@ -316,10 +313,13 @@ class BilinearInterpolator(RegularGridInterpolator):
             m.fillna(m.shift(-1, axis=1) + m.shift(+1, axis=0) -
                      m.shift(+1, axis=0).shift(-1, axis=1), inplace=True)
 
-        return super().__init__((m.index, m.columns), m.values,
-                                 method='linear',
-                                 bounds_error=False,
-                                 fill_value=None)
+        return super().__init__(
+            (m.index, m.columns),
+            m.values,
+            method="linear",
+            bounds_error=False,
+            fill_value=None,
+        )
 
     def __call__(self, irradiance, temperature):
         '''
@@ -333,7 +333,6 @@ class BilinearInterpolator(RegularGridInterpolator):
         '''
         return super().__call__((irradiance, temperature))
 
-#%%
 
 def martin_ruiz(aoi, a_r=0.16):
     r'''
@@ -575,4 +574,3 @@ def faiman(poa_global, temp_air, wind_speed=1.0, u0=25.0, u1=6.84):
     heat_input = poa_global
     temp_difference = heat_input / total_loss_factor
     return temp_air + temp_difference
-

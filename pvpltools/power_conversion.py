@@ -13,7 +13,6 @@ from scipy.optimize import curve_fit
 
 from pvlib.inverter import _sandia_eff
 
-#%%
 
 def adr_converter_core(v_norm, p_norm, b):
     '''
@@ -76,8 +75,6 @@ def adr_converter_core(v_norm, p_norm, b):
     return p_loss_norm
 
 
-#%%
-
 def fit_adr_converter_core(v_norm, p_norm, p_loss_norm,
                            method='trf', **kwargs):
     '''
@@ -133,7 +130,6 @@ def fit_adr_converter_core(v_norm, p_norm, p_loss_norm,
 
     return b.reshape(3, 3), pcov
 
-#%%
 
 def create_cec_matrix_sandia(inverter):
     '''
@@ -154,7 +150,6 @@ def create_cec_matrix_sandia(inverter):
 
     return v_dc, p_dc, p_ac.reshape(v_dc.shape)
 
-#%%
 
 def fit_adr_to_sandia(snl_params):
     '''
@@ -170,12 +165,12 @@ def fit_adr_to_sandia(snl_params):
                 'MPPTLow', 'MPPTHi', 'TambLow', 'TambHi', 'Weight']
 
     SNL_SOURCES = ['Vac', 'Pnt', 'Vdcmax', 'Idcmax',
-                  'Mppt_low', 'Mppt_high', 'Paco',
-                  'Pdco',  'Vdco', 'Mppt_low', 'Mppt_high']
+                   'Mppt_low', 'Mppt_high', 'Paco',
+                   'Pdco',  'Vdco', 'Mppt_low', 'Mppt_high']
 
     ADR_TARGETS = ['Vac', 'Pnt', 'Vdcmax', 'Idcmax',
-                  'MPPTLow', 'MPPTHi', 'Pacmax',
-                  'Pnom', 'Vnom', 'Vmin', 'Vmax']
+                   'MPPTLow', 'MPPTHi', 'Pacmax',
+                   'Pnom', 'Vnom', 'Vmin', 'Vmax']
 
     # create a skeleton Series to receive the ADR parameter values
     adr_params = pd.Series(index=ADR_KEYS, dtype=object)

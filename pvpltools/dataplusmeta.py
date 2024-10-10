@@ -37,17 +37,15 @@ import pandas as pd
 from yaml import CLoader as Loader
 import yaml
 
-#%%
-
 # The following constants govern the formatting and parsing of text files.
 # Best to leave them as they are to maintain file compatibility.
 
-PREAMBLE = \
-'''# This file contains three sections separated by two blank lines.
+PREAMBLE = """\
+# This file contains three sections separated by two blank lines.
 # The first section contains meta data, which can be parsed with yaml.
 # The second and third sections contain data column definitions
 # and data respectively, both formatted as csv tables.
-'''
+"""
 # On second thought, let's not use the preamble.
 PREAMBLE = ''
 UTF8_BOM = u'\uFEFF'
@@ -66,19 +64,14 @@ READ_CSV_OPTIONS = dict(skipinitialspace=True,
 
 TO_CSV_OPTIONS = {"lineterminator": "\n"}
 
-#%%
 
 class DataPlusMeta():
-    """
-    Class to bundle tabular data with metadata, with methods to read
-    and write files.
-
-    Author: Anton Driesse, PV Performance Labs
-    """
-
     def __init__(self, data=None, cdef=None, meta=None, source=None):
         """
-        Create a DataPlusMeta object.
+        Class to bundle tabular data with metadata, with methods to read
+        and write files.
+
+        Author: Anton Driesse, PV Performance Labs
 
         data : pandas.DataFrame, default=None
             Two-dimensional tabular data.
@@ -97,16 +90,15 @@ class DataPlusMeta():
             name.
 
         """
-        self.data   = data
-        self.cdef   = cdef
-        self.meta   = meta or {}
+        self.data = data
+        self.cdef = cdef
+        self.meta = meta or {}
         self.source = source or ''
 
         # Check and warn if cdef does not match data
         self.check_cdef(raise_on_mismatch=False)
 
         return
-
 
     def __repr__(self):
         '''
@@ -122,7 +114,6 @@ class DataPlusMeta():
 
         return ('%s object with %d data columns from %s.' %
                 (classname, ndata, source))
-
 
     def check_cdef(self, raise_on_mismatch=False):
         '''
@@ -165,7 +156,6 @@ class DataPlusMeta():
                 return False
         return True
 
-
     def update_cdef(self, raise_on_fail=True):
         '''
         Update the dtype column in cdef with dtype values found in data,
@@ -194,7 +184,6 @@ class DataPlusMeta():
                     warn(message)
                     return False
         return True
-
 
     @classmethod
     def from_txt(cls, file, use_dtypes=True):
@@ -248,7 +237,6 @@ class DataPlusMeta():
         data = data.set_index(data.columns[0])
 
         return cls(data, cdef, meta, source=file)
-
 
     def to_txt(self, file, update_cdef=True, preamble=None):
         """

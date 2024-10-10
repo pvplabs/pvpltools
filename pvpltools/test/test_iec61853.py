@@ -14,13 +14,12 @@ from pvpltools.iec61853 import (
     BilinearInterpolator,
 )
 
-#%%
 
 def test_convert_to_banded():
 
     # simple sr with high plateau
     sr = pd.Series(index=[280.0, 889.0, 1000.0, 1150.0],
-                   data=[   0.0,   1.0,    1.0,    0.0])
+                   data=[0.0, 1.0, 1.0, 0.0])
 
     sr_k = convert_to_banded(sr)
     # at least one band is in the plateau
@@ -28,13 +27,13 @@ def test_convert_to_banded():
     assert_equal(np.count_nonzero(sr_k), 20)
     assert_allclose(np.mean(sr_k), 0.36986736)
 
-#%%
+
 def test_calc_spectral_factor():
     # TODO: @Anton, review atol values in all assert_allclose calls (6 total)
     # make three test spectra
     bi0 = np.array(BANDED_AM15G)
-    bi1 = bi0 * np.linspace(1.1, 0.5, 29) # blue enhanced
-    bi2 = bi0 * np.linspace(0.5, 1.1, 29) # red enhanced
+    bi1 = bi0 * np.linspace(1.1, 0.5, 29)  # blue enhanced
+    bi2 = bi0 * np.linspace(0.5, 1.1, 29)  # red enhanced
 
     bi = np.vstack([bi0, bi1, bi2])
 
@@ -45,7 +44,8 @@ def test_calc_spectral_factor():
     assert_allclose(smm, [1, 1, 1], atol=1e-2)
 
     # flat SR exactly to limits
-    sr = pd.Series([1.0, 1.0], [SPECTRAL_BAND_EDGES[0], SPECTRAL_BAND_EDGES[-2]])
+    sr = pd.Series([1.0, 1.0],
+                   [SPECTRAL_BAND_EDGES[0], SPECTRAL_BAND_EDGES[-2]])
     bsr = convert_to_banded(sr)
     smm = calc_spectral_factor(bi, bsr)
     assert_allclose(smm, [1, 1, 1], atol=1e-2)
@@ -69,7 +69,6 @@ def test_calc_spectral_factor():
     smm = calc_spectral_factor(bi * 2, bsr)
     assert_allclose(smm, [1., 1.00059311, 0.99934824], atol=1e-2)
 
-#%%
 
 def test_BilinearInterpolator():
 
@@ -82,8 +81,8 @@ def test_BilinearInterpolator():
 
     eta = pd.DataFrame(index=[1000, 1100],
                        columns=[15, 25],
-                       data=[[  22.0, 20.0],
-                              [np.nan, 19.0]])
+                       data=[[22.0, 20.0],
+                             [np.nan, 19.0]])
 
     interpolate_eta = BilinearInterpolator(eta)
     assert not np.any(np.isnan(interpolate_eta.values))

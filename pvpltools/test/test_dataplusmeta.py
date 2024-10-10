@@ -10,8 +10,6 @@ from pandas.testing import assert_frame_equal
 
 from pvpltools.dataplusmeta import DataPlusMeta
 
-#%%
-
 test_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = os.path.join(test_dir, 'data')
 
@@ -19,7 +17,6 @@ test_file = os.path.join(test_dir, 'data', 'sample_iec.txt')
 test_file_copy = os.path.join(test_dir, 'data', 'sample_iec_copy.txt')
 test_file_data = os.path.join(test_dir, 'data', 'sample_iec_copy2.txt')
 
-#%%
 
 def test_1():
 
@@ -41,10 +38,10 @@ def test_1():
     with pytest.warns(UserWarning, match='dtypes'):
         dpm = DataPlusMeta.from_txt(test_file, use_dtypes=False)
 
-    with pytest.raises(AssertionError, match='Attribute "dtype" are different'):
+    with pytest.raises(AssertionError,
+                       match='Attribute "dtype" are different'):
         assert_frame_equal(dpm.data, dpm2.data)
 
-#%%
 
 def test_2():
 
@@ -75,7 +72,6 @@ def test_2():
 
     dpm3.to_txt(test_file_data, update_cdef=True)
 
-#%%
 
 def test_3():
 
@@ -83,11 +79,11 @@ def test_3():
 
     dpm = DataPlusMeta.from_txt(test_file)
 
-    dpm.data.rename(columns={'Date':'DATE'}, inplace=True)
+    dpm.data.rename(columns={'Date': 'DATE'}, inplace=True)
     with pytest.warns(UserWarning, match='Labels'):
         assert not dpm.check_cdef()
 
-    dpm.data.rename(columns={'DATE':'Date'}, inplace=True)
+    dpm.data.rename(columns={'DATE': 'Date'}, inplace=True)
     assert dpm.check_cdef()
 
     dpm.data['G'] = dpm.data['G'].astype('float')
@@ -104,7 +100,6 @@ def test_3():
     with pytest.raises(RuntimeError, match='no data'):
         dpm.to_txt('no file')
 
-#%%
 
 if __name__ == '__main__':
 
