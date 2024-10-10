@@ -1,4 +1,4 @@
-.. py:module:: pvpltools.iec61853
+.. currentmodule:: pvpltools
 
 IEC61853 Utils
 ==============
@@ -6,9 +6,9 @@ IEC61853 Utils
 .. autosummary::
    :toctree: generated/
 
-   convert_to_banded
-   calc_spectral_factor
-   BilinearInterpolator
-   martin_ruiz
-   martin_ruiz_diffuse
-   faiman
+   iec61853.convert_to_banded
+   iec61853.calc_spectral_factor
+   iec61853.BilinearInterpolator
+   iec61853.martin_ruiz
+   iec61853.martin_ruiz_diffuse
+   iec61853.faiman
