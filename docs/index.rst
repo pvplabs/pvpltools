@@ -12,5 +12,5 @@ documentation for details.
    user_guide/index
    api_reference/index
    autogen_examples/index
-   whatsnews/_index
    contribute/contributing
+   whatsnews/_index
