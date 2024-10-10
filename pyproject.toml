@@ -30,7 +30,8 @@ classifiers = [
 [project.optional-dependencies]
 test = [
     "pytest",
-    "pytest-cov"
+    "pytest-cov",
+    "flake8",
 ]
 docs = [
     "sphinx~=7.4",
