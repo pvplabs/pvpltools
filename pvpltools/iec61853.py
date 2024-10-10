@@ -56,9 +56,9 @@ BANDED_AM15G = (
 
 #%%
 
-def convert_to_banded(spectral_reponse):
+def convert_to_banded(spectral_response):
     """
-    Calculate the mean spectral reponse in standard wavelength bands.
+    Calculate the mean spectral response in standard wavelength bands.
 
     The mean value for each band is calculated as the area under the
     linearly interpolated spectral response (SR) curve between band edges,
@@ -67,15 +67,15 @@ def convert_to_banded(spectral_reponse):
 
     Parameters
     ----------
-    spectral_reponse : pandas.Series
-        Spectral response.  The index of spectral_reponse must contain
-        wavelengths [nm]; the values in spectral_reponse may be
+    spectral_response : pandas.Series
+        Spectral response.  The index of spectral_response must contain
+        wavelengths [nm]; the values in spectral_response may be
         relative or absolute.
 
     Returns
     -------
     np.array
-        Mean values of the spectral_reponse in the specified wavelength bands.
+        Mean values of the spectral_response in the specified wavelength bands.
 
     Notes:
     ------
@@ -92,7 +92,7 @@ def convert_to_banded(spectral_reponse):
 
     Author: Anton Driesse, PV Performance Labs
     """
-    sr = spectral_reponse
+    sr = spectral_response
 
     band_edges = SPECTRAL_BAND_EDGES
 
@@ -515,11 +515,10 @@ def martin_ruiz_diffuse(surface_tilt, a_r=0.16, c1=None, c2=None):
 def faiman(poa_global, temp_air, wind_speed=1.0, u0=25.0, u1=6.84):
     '''
     Calculate cell or module temperature using an empirical heat loss factor
-    model as proposed by Faiman [1]_ and adopted in the IEC 61853
-    standards [2]_ and [3]_.
+    model as proposed by Faiman and adopted in the IEC 61853 standard.
 
-    Usage of this model in the IEC 61853 standard does not distinguish
-    between cell and module temperature.
+    Model is described in [1]_ and its usage in the IEC 61853 standards [2]_
+    and [3]_ does not distinguish between cell and module temperature.
 
     Parameters
     ----------
@@ -553,15 +552,15 @@ def faiman(poa_global, temp_air, wind_speed=1.0, u0=25.0, u1=6.84):
 
     References
     ----------
-    [1] Faiman, D. (2008). "Assessing the outdoor operating temperature of
-    photovoltaic modules." Progress in Photovoltaics 16(4): 307-315.
+    .. [1] Faiman, D. (2008). "Assessing the outdoor operating temperature of
+       photovoltaic modules." Progress in Photovoltaics 16(4): 307-315.
 
-    [2] "IEC 61853-2 Photovoltaic (PV) module performance testing and energy
-    rating - Part 2: Spectral responsivity, incidence angle and module
-    operating temperature measurements". IEC, Geneva, 2018.
+    .. [2] "IEC 61853-2 Photovoltaic (PV) module performance testing and energy
+       rating - Part 2: Spectral responsivity, incidence angle and module
+       operating temperature measurements". IEC, Geneva, 2018.
 
-    [3] "IEC 61853-3 Photovoltaic (PV) module performance testing and energy
-    rating - Part 3: Energy rating of PV modules". IEC, Geneva, 2018.
+    .. [3] "IEC 61853-3 Photovoltaic (PV) module performance testing and energy
+       rating - Part 3: Energy rating of PV modules". IEC, Geneva, 2018.
 
     Author: Anton Driesse, PV Performance Labs
     '''

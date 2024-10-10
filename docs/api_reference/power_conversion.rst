@@ -1,4 +1,4 @@
-.. py:module:: pvpltools.power_conversion
+.. currentmodule:: pvpltools
 
 Power conversion
 ================
@@ -6,7 +6,7 @@ Power conversion
 .. autosummary::
    :toctree: generated/
 
-   adr_converter_core
-   fit_adr_converter_core
-   create_cec_matrix_sandia
-   fit_adr_to_sandia
+   power_conversion.adr_converter_core
+   power_conversion.fit_adr_converter_core
+   power_conversion.create_cec_matrix_sandia
+   power_conversion.fit_adr_to_sandia

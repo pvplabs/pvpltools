@@ -1,6 +1,6 @@
-.. currentmodule:: pvpltools
-
 .. _api:
+
+.. py:module:: pvpltools
 
 =============
 API Reference

@@ -1,4 +1,4 @@
-.. py:module:: pvpltools.dataplusmeta
+.. currentmodule:: pvpltools
 
 Data + Metadata manipulation utils
 ==================================
@@ -6,4 +6,4 @@ Data + Metadata manipulation utils
 .. autosummary::
    :toctree: generated/
 
-   DataPlusMeta
+   dataplusmeta.DataPlusMeta
