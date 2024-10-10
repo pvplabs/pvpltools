@@ -41,10 +41,10 @@ docs = [
 all = ["pvpltools[test,docs]"]
 
 [project.urls]
-"Homepage" = "https://github.com/adriesse/pvpltools"
+"Homepage" = "https://github.com/pvlabs/pvpltools"
 # "Documentation" = ""  # TODO: after RTD release
-"Repository" = "https://github.com/adriesse/pvpltools"
-"Bug Tracker" = "https://github.com/adriesse/pvpltools/issues"
+"Repository" = "https://github.com/pvlabs/pvpltools"
+"Bug Tracker" = "https://github.com/pvlabs/pvpltools/issues"
 # "Changelog" = ""  # TODO: after RTD release
 
 [tool.setuptools_scm]
