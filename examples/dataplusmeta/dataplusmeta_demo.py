@@ -51,7 +51,8 @@ ax.set_prop_cycle('color', plt.cm.rainbow(np.linspace(0,1,len(eta_rel.index))))
 eta_rel.transpose().plot(style='s-', lw=2, ax=ax)
 
 # add gamma
-gammafun = lambda T: 1 + (T - 25) * dpm.meta['datasheet']['gamma_mp'] / 100
+def gammafun(T):
+    return 1 + (T - 25) * dpm.meta['datasheet']['gamma_mp'] / 100
 trange = np.array([0, 100])
 ax.plot(trange, gammafun(trange), 'k--', lw=2, label='gamma Pmax')
 
