@@ -89,4 +89,3 @@ def test_BilinearInterpolator():
 
     result = interpolate_eta([1100, 1000, 900], [15, 20, 25])
     assert_allclose(result, [21, 21, 21])
-
