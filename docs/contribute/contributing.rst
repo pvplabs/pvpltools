@@ -51,6 +51,13 @@ Line-length should be limited to 79 characters. In general, try to follow the
 
 .. _PEP 8: https://pep8.org/
 
+We use `flake8`_ to enforce the code style. To check the code style, run the
+following command from the root of the repository:
+
+.. code-block:: bash
+
+    python -m flake8
+
 Testing
 -------
 

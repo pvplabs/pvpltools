@@ -50,3 +50,6 @@ all = ["pvpltools[test,docs]"]
 "Changelog" = "https://pvpltools.readthedocs.io/en/latest/"
 
 [tool.setuptools_scm]
+
+[tool.flake8]
+max-line-length = 79
