@@ -16,7 +16,7 @@ from pvpltools.dataplusmeta import DataPlusMeta
 
 mpl.style.use('classic')
 
-#%%
+# %%
 # obtain some matrix data
 dpm = DataPlusMeta.from_txt('../data/CS5P-220M.txt')
 name = dpm.meta['name']
@@ -27,13 +27,16 @@ stc = mtx.query('irradiance == 1000 and temperature == 25').mean()
 mtx['eta_rel'] = mtx.p_mp / mtx.irradiance * stc.irradiance / stc.p_mp
 
 # create a pivot table for easy plotting
-eta_rel = mtx.pivot(index='irradiance', columns='temperature', values='eta_rel')
+eta_rel = mtx.pivot(
+    index='irradiance', columns='temperature', values='eta_rel'
+)
 print(eta_rel)
 print(eta_rel.T)
 
 # plot vs irradiance
-fig, ax = plt.subplots(1,1, num=name+' Irradiance')
-ax.set_prop_cycle('color', plt.cm.rainbow(np.linspace(0,1,len(eta_rel.columns))))
+fig, ax = plt.subplots(1, 1, num=name + " Irradiance")
+ax.set_prop_cycle("color",
+                  plt.cm.rainbow(np.linspace(0, 1, len(eta_rel.columns))))
 eta_rel.plot(style='s-', lw=2, ax=ax)
 
 # make nice
@@ -46,13 +49,17 @@ plt.xlabel('Irradiance (W/m²)')
 plt.ylabel('Efficiency relative to STC efficiency')
 
 # plt vs temperature
-fig, ax = plt.subplots(1,1, num=name+' Temperature')
-ax.set_prop_cycle('color', plt.cm.rainbow(np.linspace(0,1,len(eta_rel.index))))
+fig, ax = plt.subplots(1, 1, num=name + " Temperature")
+ax.set_prop_cycle("color",
+                  plt.cm.rainbow(np.linspace(0, 1, len(eta_rel.index))))
 eta_rel.transpose().plot(style='s-', lw=2, ax=ax)
+
 
 # add gamma
 def gammafun(T):
     return 1 + (T - 25) * dpm.meta['datasheet']['gamma_mp'] / 100
+
+
 trange = np.array([0, 100])
 ax.plot(trange, gammafun(trange), 'k--', lw=2, label='gamma Pmax')
 
