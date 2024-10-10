@@ -9,6 +9,7 @@ dependencies = [
   "matplotlib",
   "numpy",
   "pandas",
+  "openpyxl",
   "pvlib",
   "PyYAML>=5.1.2",
   "scipy",
