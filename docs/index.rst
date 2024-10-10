@@ -13,3 +13,4 @@ documentation for details.
    api_reference/index
    autogen_examples/index
    whatsnews/_index
+   contribute/contributing
