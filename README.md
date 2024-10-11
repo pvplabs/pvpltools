@@ -8,51 +8,11 @@ Latest news
 
 [101]: https://doi.org/10.1002/pip.3763
 
-2021-10-17: New module `power_conversion`, which introduces a function for calculating the ADR inverter model coeffients and more.
+2021-10-17: New module `power_conversion`, which introduces a function for calculating the ADR inverter model coefficients and more.
 
 2021-08-11: The IEC 61853 spectral factor function has a new option `integration_limit`.  Explanations are provided in the doc string. 
 
 2020-12-02: Seven models and a model fitting function are now available, and the example code shows how to fit them to data and calculate rms error for comparisons. And of course there are nice graphs.
-
-
-Contents
---------
-
-A quick overview:
-
-- pvpltools/
-	- power_conversion.py (work in progress)
-		- functions related to PV inverters and other power conversion devices
-		
-	- module_efficiency.py
-		- a collection of models for PV module efficiency (at MPP)
-		- includes the new ADR model and others
-        - also includes a model fitting function
-        - demonstrations in a Jupyter Notebook in examples directory
-	
-	- iec61853.py
-		- reliable functions for Climate-Specific Energy Rating (CSER) calculations
-		- incident angle modifier for direct and diffuse irradiance
-		- spectral correction/mismatch factor
-		- module operating temperature
-		- efficiency matrix interpolation/extrapolation
-
-	- dataplusmeta.py
-		- a simple way to pack data and essential meta-data into a single text file
-
-	- data/
-		- nrel_mpert/
-			- module measurements, model parameters and other data in DataPlusMeta style
-
-	- tests/
-		- test files for the functions in the main module, to be run with `pytest`
-
-- examples/
-    - module_efficiency_demo.ipynb
-    - dataplusmeta_demo.py
-
-- docs/
-	- sphinx project files and documentation auxiliary files, user guide, etc.
 
 Development status
 ------------------

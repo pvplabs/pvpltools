@@ -38,6 +38,7 @@ suppress_warnings = ["ref.footnote"]
 
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["static"]
+html_logo = "static/pvpltools_logo.png"
 
 # -- Options for sphinx-gallery ----------------------------------------------
 # https://sphinx-gallery.github.io/stable/configuration.html
@@ -66,3 +67,17 @@ intersphinx_mapping = {
 mathjax3_config = {
     "chtml": {"displayAlign": "left", "displayIndent": "2em"},
 }
+
+# -- Options for pydata-sphinx-theme -----------------------------------------
+# https://pydata-sphinx-theme.rtfd.io/en/latest/user_guide/configuring.html
+
+html_theme_options = {
+    "github_url": "https://github.com/pvplabs/pvpltools",
+    "icon_links": [
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/pvpltools/",
+            "icon": "fab fa-python",
+        },
+    ],
+}  # noqa: E501

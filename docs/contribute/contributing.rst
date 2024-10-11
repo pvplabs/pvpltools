@@ -100,3 +100,53 @@ documentation.
 
 You will be able to see the status of the workflows on the pull request page,
 as well to a link to the documentation build.
+
+If the workflows fail, please check the logs and fix the issues.
+
+Repository structure
+--------------------
+
+A quick overview, subject to change:
+
+- ``pvpltools/``
+    Python package directory containing the code and tests.
+	- ``power_conversion.py`` (work in progress)
+		- functions related to PV inverters and other power conversion devices
+	- ``module_efficiency.py``
+		- a collection of models for PV module efficiency (at MPP)
+		- includes the new ADR model and others
+        - also includes a model fitting function
+        - demonstrations in a Jupyter Notebook in examples directory
+	- ``iec61853.py``
+		- reliable functions for Climate-Specific Energy Rating (CSER) calculations
+		- incident angle modifier for direct and diffuse irradiance
+		- spectral correction/mismatch factor
+		- module operating temperature
+		- efficiency matrix interpolation/extrapolation
+	- ``dataplusmeta.py``
+		- a simple way to pack data and essential meta-data into a single text file
+	- ``data/``
+		- ``nrel_mpert/``
+			- module measurements, model parameters and other data in DataPlusMeta style
+	- ``tests/``
+		- test files for the functions in the main module, to be run with `pytest`
+    - ``__init__.py``
+        - to make the directory a package and publish the submodules' names
+
+- ``examples/``
+    - ``data/``
+        - data files for the examples
+    - other folders
+        - with plain Python Jupyter-like Notebooks demonstrating use of the package
+
+- ``docs/``
+	- sphinx project files and documentation auxiliary files, this user guide, etc.
+
+- ``.github/``
+    - GitHub Actions workflows
+
+- ``ci/``
+    - data files for the CI/CD workflows
+
+- ``pyproject.toml``
+    - configuration file for the project, including dependencies
