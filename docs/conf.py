@@ -3,6 +3,18 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+
+import pvpltools
+
+# -- Path setup --------------------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+sys.path.insert(0, os.path.abspath('../'))
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -10,17 +22,20 @@ project = "pvpltools"
 copyright = "2024, Anton Driesse"
 author = "Anton Driesse"
 
+version = pvpltools.__version__
+release = pvpltools.__version__
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "sphinx.ext.extlinks",
     "sphinx.ext.napoleon",
-    "sphinx.ext.autosummary",
     "sphinx_gallery.gen_gallery",
     "sphinx_toggleprompt",
     "sphinx_favicon",
@@ -38,7 +53,7 @@ suppress_warnings = ["ref.footnote"]
 
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["static"]
-html_logo = "static/pvpltools_logo.png"
+html_logo = "static/pvplabs_logo.png"
 
 # -- Options for sphinx-gallery ----------------------------------------------
 # https://sphinx-gallery.github.io/stable/configuration.html
@@ -90,6 +105,17 @@ html_theme_options = {
         },
     ],
 }  # noqa: E501
+
+# -- Options for sphinx-favicon ----------------------------------------------
+# https://sphinx-favicon.readthedocs.io/en/latest/
+
+# Add favicons from extension sphinx_favicon
+favicons = [
+    {"rel": "icon", "sizes": "16x16", "href": "pvplabs_logo_16x16.ico"},
+    {"rel": "icon", "sizes": "32x32", "href": "pvplabs_logo_32x32.ico"},
+]
+
+
 # -- Options for autodoc/autosummary extensions ------------------------------
 
 autodoc_default_flags = [
