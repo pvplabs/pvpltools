@@ -66,30 +66,29 @@ TO_CSV_OPTIONS = {"lineterminator": "\n"}
 
 
 class DataPlusMeta():
+    """
+    Class to bundle tabular data with metadata, with methods to read
+    and write files.
+
+    Author: Anton Driesse, PV Performance Labs
+
+    data : pandas.DataFrame, default=None
+        Two-dimensional tabular data.
+
+    cdef : pandas.DataFrame, default=None
+        Column definitions for the tabular data. Should logically have one
+        row for each column in data. (This may be enforced in file
+        operations.)
+
+    meta : dict, default=None
+        Dictionary containing any useful (or not) metadata. May contain
+        lists and other nested dictionaries.
+
+    source : str, default=None
+        Identifies the source of the data, if needed.  Typically a file
+        name.
+    """
     def __init__(self, data=None, cdef=None, meta=None, source=None):
-        """
-        Class to bundle tabular data with metadata, with methods to read
-        and write files.
-
-        Author: Anton Driesse, PV Performance Labs
-
-        data : pandas.DataFrame, default=None
-            Two-dimensional tabular data.
-
-        cdef : pandas.DataFrame, default=None
-            Column definitions for the tabular data. Should logically have one
-            row for each column in data. (This may be enforced in file
-            operations.)
-
-        meta : dict, default=None
-            Dictionary containing any useful (or not) metadata. May contain
-            lists and other nested dictionaries.
-
-        source : str, default=None
-            Identifies the source of the data, if needed.  Typically a file
-            name.
-
-        """
         self.data = data
         self.cdef = cdef
         self.meta = meta or {}

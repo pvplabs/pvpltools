@@ -26,7 +26,7 @@ extensions = [
     "sphinx_favicon",
 ]
 
-templates_path = ["_templates"]
+templates_path = ["templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
@@ -47,6 +47,15 @@ sphinx_gallery_conf = {
     "examples_dirs": "../examples",
     "gallery_dirs": "autogen_examples",
     "filename_pattern": r"\.py",
+    # directory where function/class granular galleries are stored
+    'backreferences_dir': 'api_reference/generated/gallery_backreferences',
+
+    # Modules for which function/class level galleries are created.
+    # Tuple of str
+    'doc_module': ('pvpltools',),
+
+    # https://sphinx-gallery.github.io/dev/configuration.html#removing-config-comments  # noqa: E501
+    'remove_config_comments': True,
 }
 
 # -- Options for intersphinx extension ---------------------------------------
@@ -81,3 +90,11 @@ html_theme_options = {
         },
     ],
 }  # noqa: E501
+# -- Options for autodoc/autosummary extensions ------------------------------
+
+autodoc_default_flags = [
+    "members",
+    "undoc-members",
+    "show-inheritance",
+    "inherited-members",
+]
