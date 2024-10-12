@@ -3,6 +3,18 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+
+import pvpltools
+
+# -- Path setup --------------------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+sys.path.insert(0, os.path.abspath('../'))
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
@@ -10,23 +22,26 @@ project = "pvpltools"
 copyright = "2024, Anton Driesse"
 author = "Anton Driesse"
 
+version = pvpltools.__version__
+release = pvpltools.__version__
+
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "sphinx.ext.extlinks",
     "sphinx.ext.napoleon",
-    "sphinx.ext.autosummary",
     "sphinx_gallery.gen_gallery",
     "sphinx_toggleprompt",
     "sphinx_favicon",
 ]
 
-templates_path = ["_templates"]
+templates_path = ["templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
@@ -38,6 +53,7 @@ suppress_warnings = ["ref.footnote"]
 
 html_theme = "pydata_sphinx_theme"
 html_static_path = ["static"]
+html_logo = "static/pvplabs_logo.png"
 
 # -- Options for sphinx-gallery ----------------------------------------------
 # https://sphinx-gallery.github.io/stable/configuration.html
@@ -46,6 +62,15 @@ sphinx_gallery_conf = {
     "examples_dirs": "../examples",
     "gallery_dirs": "autogen_examples",
     "filename_pattern": r"\.py",
+    # directory where function/class granular galleries are stored
+    'backreferences_dir': 'api_reference/generated/gallery_backreferences',
+
+    # Modules for which function/class level galleries are created.
+    # Tuple of str
+    'doc_module': ('pvpltools',),
+
+    # https://sphinx-gallery.github.io/dev/configuration.html#removing-config-comments  # noqa: E501
+    'remove_config_comments': True,
 }
 
 # -- Options for intersphinx extension ---------------------------------------
@@ -66,3 +91,36 @@ intersphinx_mapping = {
 mathjax3_config = {
     "chtml": {"displayAlign": "left", "displayIndent": "2em"},
 }
+
+# -- Options for pydata-sphinx-theme -----------------------------------------
+# https://pydata-sphinx-theme.rtfd.io/en/latest/user_guide/configuring.html
+
+html_theme_options = {
+    "github_url": "https://github.com/pvplabs/pvpltools",
+    "icon_links": [
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/pvpltools/",
+            "icon": "fab fa-python",
+        },
+    ],
+}  # noqa: E501
+
+# -- Options for sphinx-favicon ----------------------------------------------
+# https://sphinx-favicon.readthedocs.io/en/latest/
+
+# Add favicons from extension sphinx_favicon
+favicons = [
+    {"rel": "icon", "sizes": "16x16", "href": "pvplabs_logo_16x16.ico"},
+    {"rel": "icon", "sizes": "32x32", "href": "pvplabs_logo_32x32.ico"},
+]
+
+
+# -- Options for autodoc/autosummary extensions ------------------------------
+
+autodoc_default_flags = [
+    "members",
+    "undoc-members",
+    "show-inheritance",
+    "inherited-members",
+]

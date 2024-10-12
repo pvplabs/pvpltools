@@ -2,76 +2,45 @@
 
 Useful tools for photovoltaics and beyond!
 
+<p align="left">
+  <table>
+    <tr>
+      <td>PyPI version</td>
+      <td>
+        <a href="https://badge.fury.io/py/pvpltools">
+          <img src="https://badge.fury.io/py/pvpltools.svg" alt="PyPI version" height="18"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>License</td>
+      <td>
+        <a href="https://github.com/pvplabs/pvpltools/blob/main/LICENSE">
+          <img src="https://img.shields.io/pypi/l/pvpltools.svg" alt="license" />
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>Build status</td>
+      <td>
+        <a href="http://pvpltools.readthedocs.org/en/latest/">
+          <img src="https://readthedocs.org/projects/pvpltools/badge/?version=latest" alt="documentation build status" />
+        </a>
+        <a href="https://github.com/pvplabs/pvpltools/actions/workflows/pytest.yml?query=branch%3Amain">
+          <img src="https://github.com/pvplabs/pvpltools/actions/workflows/pytest.yml/badge.svg?branch=main" alt="GitHub Actions Testing Status" />
+        </a>
+        <a href="https://codecov.io/gh/pvplabs/pvpltools">
+          <img src="https://codecov.io/gh/pvplabs/pvpltools/branch/main/graph/badge.svg" alt="codecov coverage" />
+        </a>
+      </td>
+  </table>
+</p>
+
 Latest news
 -----------
 2024-02-13: More proof that these tools are useful!  The module efficiency functions were put to good use in [this new study by Lelia Deville and her colleagues][101]: 
 
 [101]: https://doi.org/10.1002/pip.3763
-
-2021-10-17: New module `power_conversion`, which introduces a function for calculating the ADR inverter model coeffients and more.
-
-2021-08-11: The IEC 61853 spectral factor function has a new option `integration_limit`.  Explanations are provided in the doc string. 
-
-2020-12-02: Seven models and a model fitting function are now available, and the example code shows how to fit them to data and calculate rms error for comparisons. And of course there are nice graphs.
-
-
-Contents
---------
-
-A quick overview:
-
-- pvpltools/
-	- power_conversion.py (work in progress)
-		- functions related to PV inverters and other power conversion devices
-		
-	- module_efficiency.py
-		- a collection of models for PV module efficiency (at MPP)
-		- includes the new ADR model and others
-        - also includes a model fitting function
-        - demonstrations in a Jupyter Notebook in examples directory
-	
-	- iec61853.py
-		- reliable functions for Climate-Specific Energy Rating (CSER) calculations
-		- incident angle modifier for direct and diffuse irradiance
-		- spectral correction/mismatch factor
-		- module operating temperature
-		- efficiency matrix interpolation/extrapolation
-
-	- dataplusmeta.py
-		- a simple way to pack data and essential meta-data into a single text file
-
-	- data/
-		- nrel_mpert/
-			- module measurements, model parameters and other data in DataPlusMeta style
-
-	- tests/
-		- test files for the functions in the main module, to be run with `pytest`
-
-- examples/
-    - module_efficiency_demo.ipynb
-    - dataplusmeta_demo.py
-
-- docs/
-	- sphinx project files and documentation auxiliary files, user guide, etc.
-
-Development status
-------------------
-
-2020-12-02
-- The new module `module_efficiency.py` now contains functions for:
-    - the new ADR model
-    - HEY
-    - MotherPV
-    - PVGIS
-    - MPM5
-    - MPM6
-    - bilinear
-    - fitting any of the models to measurements
-
-2020-02-29
-
-- The main building blocks for the Energy Rating calculation are complete.
-- A higher level function of example script may be coming some day.
 
 
 Copyright
