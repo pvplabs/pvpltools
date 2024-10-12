@@ -59,6 +59,8 @@ following command from the root of the repository:
 
     python -m flake8
 
+.. _flake8: https://flake8.pycqa.org/en/latest/
+
 Testing
 -------
 
@@ -110,26 +112,33 @@ A quick overview, subject to change:
 
 - ``pvpltools/``
     Python package directory containing the code and tests.
-	- ``power_conversion.py`` (work in progress)
-		- functions related to PV inverters and other power conversion devices
-	- ``module_efficiency.py``
-		- a collection of models for PV module efficiency (at MPP)
-		- includes the new ADR model and others
+
+    - ``power_conversion.py`` (work in progress)
+        - functions related to PV inverters and other power conversion devices
+
+    - ``module_efficiency.py``
+        - a collection of models for PV module efficiency (at MPP)
+        - includes the new ADR model and others
         - also includes a model fitting function
         - demonstrations in a Jupyter Notebook in examples directory
-	- ``iec61853.py``
-		- reliable functions for Climate-Specific Energy Rating (CSER) calculations
-		- incident angle modifier for direct and diffuse irradiance
-		- spectral correction/mismatch factor
-		- module operating temperature
-		- efficiency matrix interpolation/extrapolation
-	- ``dataplusmeta.py``
-		- a simple way to pack data and essential meta-data into a single text file
-	- ``data/``
-		- ``nrel_mpert/``
-			- module measurements, model parameters and other data in DataPlusMeta style
-	- ``tests/``
-		- test files for the functions in the main module, to be run with `pytest`
+
+    - ``iec61853.py``
+        - reliable functions for Climate-Specific Energy Rating (CSER) calculations
+        - incident angle modifier for direct and diffuse irradiance
+        - spectral correction/mismatch factor
+        - module operating temperature
+        - efficiency matrix interpolation/extrapolation
+
+    - ``dataplusmeta.py``
+        - a simple way to pack data and essential meta-data into a single text file
+
+    - ``data/``
+        - ``nrel_mpert/``
+            - module measurements, model parameters and other data in DataPlusMeta style
+
+    - ``tests/``
+        - test files for the functions in the main module, to be run with ``pytest``
+
     - ``__init__.py``
         - to make the directory a package and publish the submodules' names
 
@@ -140,7 +149,7 @@ A quick overview, subject to change:
         - with plain Python Jupyter-like Notebooks demonstrating use of the package
 
 - ``docs/``
-	- sphinx project files and documentation auxiliary files, this user guide, etc.
+    - sphinx project files and documentation auxiliary files, this user guide, etc.
 
 - ``.github/``
     - GitHub Actions workflows
