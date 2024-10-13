@@ -2,4 +2,4 @@ dataplusmeta submodule
 -----------------------
 
 This submodule contains examples related to the
-:py:mod:`dataplusmeta` submodule.
+:py:mod:`pvpltools.dataplusmeta` submodule.

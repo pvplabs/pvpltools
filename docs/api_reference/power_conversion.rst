@@ -1,3 +1,5 @@
+.. py:module:: pvpltools.power_conversion
+
 .. currentmodule:: pvpltools
 
 Power conversion
