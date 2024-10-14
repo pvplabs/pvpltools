@@ -167,6 +167,7 @@ Pre-releases
 Pre-releases are published on PyPI for testing purposes. To create a pre-release,
 follow these steps:
 
+0. Make sure changelog entries are up-to-date and the code is ready for release.
 1. Push a new tag with the version number and the pre-release suffix, e.g.,
    ``v0.1.0a1``.
 2. The GitHub Actions workflow will automatically publish the pre-release to PyPI. This is the most important step, as it will test the package installation.
@@ -183,6 +184,7 @@ Releases
 
 To create a new release, follow these steps:
 
+0. Make sure changelog entries and it's filename are up-to-date and the code is ready for release.
 1. Push a new tag with the version number, e.g., ``v0.1.0``.
 2. The GitHub Actions workflow will automatically publish the release to PyPI.
 3. Install the release with pip:
