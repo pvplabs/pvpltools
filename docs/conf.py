@@ -42,7 +42,10 @@ extensions = [
 ]
 
 templates_path = ["templates"]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+source_suffix = ".rst"
+master_doc = "index"
+exclude_patterns = ["whatsnews/_next_release_template.rst"]
 
 
 # suppress unreferenced footnote warnings
