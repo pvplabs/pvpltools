@@ -1,3 +1,5 @@
+.. py:module:: pvpltools.module_efficiency
+
 .. currentmodule:: pvpltools
 
 Module efficiency modelling

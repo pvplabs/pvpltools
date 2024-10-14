@@ -1,3 +1,5 @@
+.. py:module:: pvpltools.iec61853
+
 .. currentmodule:: pvpltools
 
 IEC61853 Utils

@@ -1,3 +1,5 @@
+.. py:module:: pvpltools.dataplusmeta
+
 .. currentmodule:: pvpltools
 
 Data + Metadata manipulation utils

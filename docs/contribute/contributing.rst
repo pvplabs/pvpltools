@@ -159,3 +159,51 @@ A quick overview, subject to change:
 
 - ``pyproject.toml``
     - configuration file for the project, including dependencies
+
+
+Pre-releases
+------------
+
+Pre-releases are published on PyPI for testing purposes. To create a pre-release,
+follow these steps:
+
+1. Push a new tag with the version number and the pre-release suffix, e.g.,
+   ``v0.1.0a1``.
+2. The GitHub Actions workflow will automatically publish the pre-release to PyPI. This is the most important step, as it will test the package installation.
+3. (Optionally) Install the pre-release with pip:
+
+  .. code-block:: bash
+
+      pip install --pre pvpltools
+
+4. (Optionally) Announce the pre-release, e.g., on the GitHub "Releases" tab. You may link to the pre-release on PyPI, the documentation or copy&paste the changelog.
+
+Releases
+--------
+
+To create a new release, follow these steps:
+
+1. Push a new tag with the version number, e.g., ``v0.1.0``.
+2. The GitHub Actions workflow will automatically publish the release to PyPI.
+3. Install the release with pip:
+
+  .. code-block:: bash
+
+      pip install pvpltools
+
+4. Announce the release, e.g., on the GitHub "Releases" tab. You may link to the release on PyPI, the documentation or copy&paste the changelog.
+5. After the release, add a new section to the changelog, e.g., ``docs/whatsnews/0.1.1.rst`` and list it in ``docs/whatsnews/_index.rst`` via ``.. include:: 0.1.1.rst`` on top of the list, to preserve the chronological order. You may make a copy of the template ``docs/whatsnews/_next_release_template.rst`` and fill in the details.
+
+Other useful resources
+----------------------
+For more information, you may want to check out:
+
+- *pvlib-python*'s `contributing guide`_ for more tips on contributing to this project
+- *pvlib-python*'s `release procedure`_ for more tips on releasing a new version of this project
+- *Keep a Changelog*'s `keep_a_changelog_guide`_ for more tips on writing a changelog and recommended sections
+
+.. _contributing guide: https://pvlib-python.readthedocs.io/en/stable/contributing/index.html
+.. _release procedure: https://github.com/pvlib/pvlib-python/wiki/Release-procedures
+.. _keep_a_changelog_guide: https://keepachangelog.com/en/
+
+🌞*Have a bright coding day!*
