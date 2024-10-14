@@ -192,7 +192,7 @@ To create a new release, follow these steps:
       pip install pvpltools
 
 4. Announce the release, e.g., on the GitHub "Releases" tab. You may link to the release on PyPI, the documentation or copy&paste the changelog.
-5. After the release, add a new section to the changelog, e.g., ``docs/whatsnews/0.1.1.rst`` and list it in ``docs/whatsnews/_index.rst`` via ``.. include:: 0.1.1.rst`` on top of the list, to preserve the chronological order.
+5. After the release, add a new section to the changelog, e.g., ``docs/whatsnews/0.1.1.rst`` and list it in ``docs/whatsnews/_index.rst`` via ``.. include:: 0.1.1.rst`` on top of the list, to preserve the chronological order. You may make a copy of the template ``docs/whatsnews/_next_release_template.rst`` and fill in the details.
 
 Other useful resources
 ----------------------
