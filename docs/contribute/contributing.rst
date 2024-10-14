@@ -200,8 +200,10 @@ For more information, you may want to check out:
 
 - *pvlib-python*'s `contributing guide`_ for more tips on contributing to this project
 - *pvlib-python*'s `release procedure`_ for more tips on releasing a new version of this project
+- *Keep a Changelog*'s `keep_a_changelog_guide`_ for more tips on writing a changelog and recommended sections
 
 .. _contributing guide: https://pvlib-python.readthedocs.io/en/stable/contributing/index.html
 .. _release procedure: https://github.com/pvlib/pvlib-python/wiki/Release-procedures
+.. _keep_a_changelog_guide: https://keepachangelog.com/en/
 
 🌞*Have a bright coding day!*
