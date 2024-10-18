@@ -42,6 +42,15 @@ jobs:
       - name: Check metadata verification
         run: python -m twine check --strict dist/*
 
+      - name: Upload artifact with distribution files
+        uses: actions/upload-artifact@v4
+        with:
+          name: distro-files
+          path: dist/
+          if-no-files-found: warn
+          retention-days: 1  # delete the artifact after 1 day, no need to keep it for too long
+          compression-level: 0  # no need to compress the files
+
   publish-distribution:
     name: Upload distribution to PyPI
     runs-on: ubuntu-latest
@@ -53,5 +62,11 @@ jobs:
       # permission mandatory for trusted publishing
       id-token: write
     steps:
+      - name: Download artifact with distribution files
+        uses: actions/download-artifact@v4
+        with:
+          name: distro-files
+          path: dist/
+
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
