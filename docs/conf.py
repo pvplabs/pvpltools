@@ -39,6 +39,7 @@ extensions = [
     "sphinx_gallery.gen_gallery",
     "sphinx_toggleprompt",
     "sphinx_favicon",
+    "sphinx_copybutton",
 ]
 
 templates_path = ["templates"]
@@ -50,6 +51,13 @@ exclude_patterns = ["whatsnews/_next_release_template.rst"]
 
 # suppress unreferenced footnote warnings
 suppress_warnings = ["ref.footnote"]
+
+# rst Prolog is included at the beginning of every source file that is read.
+# This is useful for substitutions and other things that should be available in
+# every file, such as project-specific links.
+rst_prolog = """
+.. _PyPI_project: https://pypi.org/project/pvpltools/
+"""
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
