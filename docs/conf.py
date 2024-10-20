@@ -39,6 +39,7 @@ extensions = [
     "sphinx_gallery.gen_gallery",
     "sphinx_toggleprompt",
     "sphinx_favicon",
+    "sphinx_copybutton",
 ]
 
 templates_path = ["templates"]
