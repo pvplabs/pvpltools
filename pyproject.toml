@@ -50,6 +50,16 @@ all = ["pvpltools[test,docs]"]
 "Bug Tracker" = "https://github.com/pvplabs/pvpltools/issues"
 "Changelog" = "https://pvpltools.readthedocs.io/en/latest/"
 
+# Control which files are included in the built distribution
+# https://setuptools.pypa.io/en/latest/userguide/datafiles.html [2024-10-25]
+[tool.setuptools]
+include-package-data = true  # inclusion of non-python files in the package folder (like data files) [default: true]
+[tool.setuptools.packages.find]
+include = ["pvpltools*"]
+exclude = ["pvpltools.test*"]
+[tool.setuptools.exclude-package-data]
+pvpltools = ["test/*"]  # exclude test folder from the package
+
 [tool.setuptools_scm]
 
 [tool.flake8]
