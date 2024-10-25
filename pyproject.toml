@@ -46,8 +46,8 @@ all = ["pvpltools[test,docs]"]
 [project.urls]
 "Homepage" = "https://pvpltools.readthedocs.io/en/latest/"
 "Documentation" = "https://pvpltools.readthedocs.io/en/latest/"
-"Repository" = "https://github.com/pvlabs/pvpltools"
-"Bug Tracker" = "https://github.com/pvlabs/pvpltools/issues"
+"Repository" = "https://github.com/pvplabs/pvpltools"
+"Bug Tracker" = "https://github.com/pvplabs/pvpltools/issues"
 "Changelog" = "https://pvpltools.readthedocs.io/en/latest/"
 
 [tool.setuptools_scm]
