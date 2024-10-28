@@ -55,7 +55,7 @@ jobs:
         run: |
           echo "Distribution files sizes"
           du -sh dist/*
-          python -m pip install dist/*.whl --target /tmp/pvpltools
+          python -m pip install dist/*.whl --target /tmp/pvpltools --quiet --quiet
           echo "Installation sizes"
           du -sh /tmp/pvpltools
 
