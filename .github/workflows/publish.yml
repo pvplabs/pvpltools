@@ -51,6 +51,14 @@ jobs:
           retention-days: 1  # delete the artifact after 1 day, no need to keep it for too long
           compression-level: 0  # no need to compress the files
 
+      - name: Distribution files & installation sizes
+        run: |
+          echo "Distribution files sizes"
+          du -sh dist/*
+          python -m pip install dist/*.whl --target /tmp/pvpltools --quiet --quiet
+          echo "Installation sizes"
+          du -sh /tmp/pvpltools
+
   publish-distribution:
     name: Upload distribution to PyPI
     runs-on: ubuntu-latest
