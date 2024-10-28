@@ -38,16 +38,27 @@ docs = [
     "pydata-sphinx-theme~=0.15",
     "sphinx-gallery~=0.18",
     "sphinx_toggleprompt~=0.5",
-    "sphinx_favicon~=1.0"
+    "sphinx_favicon~=1.0",
+    "sphinx-copybutton~=0.5",
 ]
 all = ["pvpltools[test,docs]"]
 
 [project.urls]
 "Homepage" = "https://pvpltools.readthedocs.io/en/latest/"
 "Documentation" = "https://pvpltools.readthedocs.io/en/latest/"
-"Repository" = "https://github.com/pvlabs/pvpltools"
-"Bug Tracker" = "https://github.com/pvlabs/pvpltools/issues"
+"Repository" = "https://github.com/pvplabs/pvpltools"
+"Bug Tracker" = "https://github.com/pvplabs/pvpltools/issues"
 "Changelog" = "https://pvpltools.readthedocs.io/en/latest/"
+
+# Control which files are included in the built distribution
+# https://setuptools.pypa.io/en/latest/userguide/datafiles.html [2024-10-25]
+[tool.setuptools]
+include-package-data = true  # inclusion of non-python files in the package folder (like data files) [default: true]
+[tool.setuptools.packages.find]
+include = ["pvpltools*"]
+exclude = ["pvpltools.test*"]
+[tool.setuptools.exclude-package-data]
+pvpltools = ["test/*"]  # exclude test folder from the package
 
 [tool.setuptools_scm]
 

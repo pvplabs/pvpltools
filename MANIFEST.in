@@ -1,0 +1,9 @@
+# This file defines which files should be included in the source distribution (.tar.gz)
+# and, in conjuntion with pyproject.toml, affects the files included in the wheel distribution (.whl)
+# See https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html for reference [2024-10-25]
+
+# By default, all VCS-tracked files are included, so let's exclude unwanted files
+prune .github
+prune ci
+exclude .git*
+exclude .readthedocs.yaml
