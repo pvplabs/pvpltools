@@ -29,7 +29,7 @@ def test_convert_to_banded():
 
 
 def test_calc_spectral_factor():
-    # TODO: @Anton, review atol values in all assert_allclose calls (6 total)
+
     # make three test spectra
     bi0 = np.array(BANDED_AM15G)
     bi1 = bi0 * np.linspace(1.1, 0.5, 29)  # blue enhanced
@@ -40,34 +40,34 @@ def test_calc_spectral_factor():
     # flat SR beyond limits
     sr = pd.Series([1.0, 1.0], [200, 5000])
     bsr = convert_to_banded(sr)
-    smm = calc_spectral_factor(bi, bsr)
-    assert_allclose(smm, [1, 1, 1], atol=1e-2)
+    smm = calc_spectral_factor(bi, bsr, integration_limit=28)
+    assert_allclose(smm, [1, 1, 1])
 
     # flat SR exactly to limits
     sr = pd.Series([1.0, 1.0],
                    [SPECTRAL_BAND_EDGES[0], SPECTRAL_BAND_EDGES[-2]])
     bsr = convert_to_banded(sr)
-    smm = calc_spectral_factor(bi, bsr)
-    assert_allclose(smm, [1, 1, 1], atol=1e-2)
+    smm = calc_spectral_factor(bi, bsr, integration_limit=28)
+    assert_allclose(smm, [1, 1, 1])
 
     # flat SR in Si range
     sr = pd.Series([1.0, 1.0], [300, 1200])
     bsr = convert_to_banded(sr)
-    smm = calc_spectral_factor(bi, bsr)
-    assert_allclose(smm, [1., 1.04744717, 0.94786063], atol=1e-2)
+    smm = calc_spectral_factor(bi, bsr, integration_limit=28)
+    assert_allclose(smm, [1., 1.04744717, 0.94786063])
 
     # sawtooth SR in Si range
     sr = pd.Series([0.1, 1.0, 0.0], [300, 1000, 1200])
     bsr = convert_to_banded(sr)
-    smm = calc_spectral_factor(bi, bsr)
-    assert_allclose(smm, [1., 1.00059311, 0.99934824], atol=1e-2)
+    smm = calc_spectral_factor(bi, bsr, integration_limit=28)
+    assert_allclose(smm, [1., 1.00059311, 0.99934824])
 
     # scaling doesn't make a difference
-    smm = calc_spectral_factor(bi, bsr * 3)
-    assert_allclose(smm, [1., 1.00059311, 0.99934824], atol=1e-2)
+    smm = calc_spectral_factor(bi, bsr * 3, integration_limit=28)
+    assert_allclose(smm, [1., 1.00059311, 0.99934824])
 
-    smm = calc_spectral_factor(bi * 2, bsr)
-    assert_allclose(smm, [1., 1.00059311, 0.99934824], atol=1e-2)
+    smm = calc_spectral_factor(bi * 2, bsr, integration_limit=28)
+    assert_allclose(smm, [1., 1.00059311, 0.99934824])
 
 
 def test_BilinearInterpolator():
