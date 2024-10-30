@@ -179,7 +179,6 @@ def adr(irradiance, temperature, k_a, k_d, tc_d, k_rs, k_rsh):
     # obtain the difference from reference temperature
     T_REF = 25
     dt = t - T_REF
-    # t_abs = t + 273.15  # TODO: @Anton, this one is not used, a bug?
 
     # equation 29 in JPV
     s_o = 10**(k_d + (tc_d * dt))
