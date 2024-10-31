@@ -12,6 +12,7 @@ dependencies = [
   "openpyxl",
   "pvlib",
   "PyYAML>=6",
+  "ruamel.yaml>=0.15",
   "scipy",
 ]
 requires-python = ">=3.8"
