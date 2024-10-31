@@ -10,7 +10,7 @@ API Reference
    :maxdepth: 2
    :caption: Contents:
 
-   dataplusmeta
-   iec61853
    module_efficiency
    power_conversion
+   iec61853
+   dataplusmeta
