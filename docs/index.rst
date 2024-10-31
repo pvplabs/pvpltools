@@ -1,10 +1,10 @@
-pvpltools documentation
-=======================
+PV Performance Labs Tools for Python
+====================================
 
-Welcome to pvpltools documentation!
+PV Performance Labs Tools for Python
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    user_guide/index
    api_reference/index
