@@ -37,7 +37,7 @@ import pandas as pd
 from ruamel.yaml import YAML
 yaml = YAML(typ='safe')
 yaml.default_flow_style = False
-yaml.allow_unicode=True
+yaml.allow_unicode = True
 
 # The following constants govern the formatting and parsing of text files.
 # Best to leave them as they are to maintain file compatibility.
