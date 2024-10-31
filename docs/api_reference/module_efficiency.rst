@@ -2,8 +2,8 @@
 
 .. currentmodule:: pvpltools
 
-Module efficiency modelling
-===========================
+PV module efficiency
+====================
 
 .. autosummary::
    :toctree: generated/

@@ -2,8 +2,8 @@
 
 .. currentmodule:: pvpltools
 
-Data + Metadata manipulation utils
-==================================
+DataPlusMeta data files
+=======================
 
 .. autosummary::
    :toctree: generated/

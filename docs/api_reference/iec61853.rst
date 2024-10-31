@@ -2,8 +2,8 @@
 
 .. currentmodule:: pvpltools
 
-IEC61853 Utils
-==============
+Energy rating
+=============
 
 .. autosummary::
    :toctree: generated/
