@@ -2,6 +2,5 @@ matplotlib
 numpy
 pandas
 pvlib
-PyYAML
 ruamel.yaml
 scipy
