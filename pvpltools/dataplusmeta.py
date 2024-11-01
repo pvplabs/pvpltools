@@ -35,8 +35,8 @@ from io import StringIO
 import pandas as pd
 
 from ruamel.yaml import YAML
-yaml = YAML(typ='safe')
-yaml.default_flow_style = False
+yaml = YAML(typ='rt')
+yaml.default_flow_style = None
 yaml.allow_unicode = True
 
 # The following constants govern the formatting and parsing of text files.
