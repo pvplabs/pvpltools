@@ -1,7 +1,7 @@
 pvpltools documentation
 =======================
 
-Welcome to pvpltools documentation!zz
+Welcome to pvpltools documentation!
 
 .. toctree::
    :maxdepth: 2
