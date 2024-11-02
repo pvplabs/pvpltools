@@ -2,5 +2,5 @@ matplotlib~=3.5
 numpy~=1.17
 pandas~=1.4
 pvlib~=0.8
-PyYAML~=5.1.2
+ruamel.yaml~=0.15
 scipy~=1.6
