@@ -34,10 +34,8 @@ from warnings import warn
 from io import StringIO
 import pandas as pd
 
-from ruamel.yaml import YAML
-yaml = YAML(typ='rt')
-yaml.default_flow_style = None
-yaml.allow_unicode = True
+from yaml import CLoader as Loader
+import yaml
 
 # The following constants govern the formatting and parsing of text files.
 # Best to leave them as they are to maintain file compatibility.
@@ -56,7 +54,8 @@ SECTION_SEPARATOR = '\n\n'
 COMMENT_CHAR = '#'
 COMMENT_LINE = COMMENT_CHAR + '\n'
 BLANK_LINE = '\n'
-# TODO find a way to optionally accept fractional seconds
+
+# trailing ".%f" has been removed to pass tests @Anton
 DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 READ_CSV_OPTIONS = dict(skipinitialspace=True,
@@ -205,7 +204,7 @@ class DataPlusMeta():
             raise RuntimeError('%s does not have three sections.' % file)
 
         # parse meta
-        meta = yaml.load(sections[0])
+        meta = yaml.load(sections[0], Loader=Loader)
 
         # parse column definitions
         cdef = pd.read_csv(StringIO(sections[1]), index_col=0,
@@ -274,7 +273,12 @@ class DataPlusMeta():
                     f.write(COMMENT_CHAR + ' ' + line + '\n')
                 f.write(BLANK_LINE)
 
-            yaml.dump(self.meta, stream=f)
+            yaml.dump(
+                self.meta,
+                stream=f,
+                default_flow_style=False,
+                allow_unicode=True
+            )
 
             f.write(SECTION_SEPARATOR)
 
