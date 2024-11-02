@@ -1,6 +1,9 @@
-matplotlib~=3.5
-numpy~=1.17
-pandas~=1.4
-pvlib~=0.8
-PyYAML~=5.1.2
-scipy~=1.6
+# operator ~= means that the version should be at least the one specified, but not higher than the second to the left:
+# e.g. ~=1.0.0 means that the version should be at least 1.0.0, but not higher than 1.1.0
+# e.g. ~=1.0 means that the version should be at least 1.0.0, but not higher than 2.0.0
+matplotlib~=3.5.0
+numpy~=1.20.3
+pandas~=1.5.0
+pvlib~=0.8.0
+ruamel.yaml~=0.15.0
+scipy~=1.7.1
