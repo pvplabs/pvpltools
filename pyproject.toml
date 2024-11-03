@@ -6,13 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "pvpltools"
 dynamic = ["version"]
 dependencies = [
-  "matplotlib",
-  "numpy",
-  "pandas",
+  "matplotlib>=3.5.0",
+  "numpy>=1.20.3",
+  "pandas>=1.5.0",
   "openpyxl",
-  "pvlib",
-  "ruamel.yaml>=0.15",
-  "scipy",
+  "pvlib>=0.8.1",
+  "ruamel.yaml>=0.15.0",
+  "scipy>=1.7.1",
 ]
 requires-python = ">=3.8"
 authors = [
@@ -34,12 +34,12 @@ test = [
     "flake8",
 ]
 docs = [
-    "sphinx~=7.4",
-    "pydata-sphinx-theme~=0.15",
-    "sphinx-gallery~=0.18",
-    "sphinx_toggleprompt~=0.5",
-    "sphinx_favicon~=1.0",
-    "sphinx-copybutton~=0.5",
+    "sphinx~=7.4.0",
+    "pydata-sphinx-theme~=0.15.0",
+    "sphinx-gallery~=0.18.0",
+    "sphinx_toggleprompt~=0.5.0",
+    "sphinx_favicon~=1.0.0",
+    "sphinx-copybutton~=0.5.0",
 ]
 all = ["pvpltools[test,docs]"]
 
