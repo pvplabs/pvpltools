@@ -56,9 +56,6 @@ all = ["pvpltools[test,docs]"]
 include-package-data = true  # inclusion of non-python files in the package folder (like data files) [default: true]
 [tool.setuptools.packages.find]
 include = ["pvpltools*"]
-exclude = ["pvpltools.test*"]
-[tool.setuptools.exclude-package-data]
-pvpltools = ["test/*"]  # exclude test folder from the package
 
 [tool.setuptools_scm]
 
