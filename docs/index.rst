@@ -10,6 +10,10 @@ The aim of this package is to make life easier for people facing similar needs a
 a small way, contribute to the transition from fossil fuels
 to renewable sources--and solar energy in particular.
 
+``pvpltools`` is compatible with and complementary to
+ `pvlib python <https://pvlib-python.readthedocs.io>`_.
+
+https://pvlib-python.readthedocs.io/en/stable/
 
 .. toctree::
    :maxdepth: 1

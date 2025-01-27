@@ -1,6 +1,11 @@
 Quick overview
 ==============
 
-Useful tools for photovoltaics and beyond!
+Currently, there are four groups of functions related to the topics:
 
-A collection of utilities created by PV Performance Labs.
+- PV module efficiency: modeling efficiency as a function of irradiance and temperature
+- power conversion: efficiency losses in inverters, but not limited to inverters
+- energy rating: the (evolving) IEC-61853 method for rating PV modules
+- DataPlusMeta: read and write columnar data together with important metadata in a human-readable text file
+
+

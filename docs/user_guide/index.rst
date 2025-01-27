@@ -7,5 +7,5 @@ User Guide
 .. toctree::
    :maxdepth: 2
 
-   installation
    quick-overview
+   installation
