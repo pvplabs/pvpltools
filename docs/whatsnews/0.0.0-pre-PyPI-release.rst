@@ -1,6 +1,9 @@
 
 ----
 
+
+----
+
 Historical notes
 ================
 
@@ -30,7 +33,7 @@ News items prior to the first PyPI release.
 
 * Seven models and a model fitting function are now available, and the example code shows how to fit them to data and calculate rms error for comparisons. And of course there are nice graphs:
 
-- The new module ``module_efficiency.py`` now contains functions for:
+* The new module ``module_efficiency.py`` contains functions for:
     - the new ADR model
     - HEY
     - MotherPV
@@ -43,5 +46,5 @@ News items prior to the first PyPI release.
 2020-02-29
 ^^^^^^^^^^
 
-- The main building blocks for the Energy Rating calculation are complete.
-- A higher level function of example script may be coming some day.
+* The main building blocks for the Energy Rating calculation are complete.
+* A higher level function of example script may be coming some day.
