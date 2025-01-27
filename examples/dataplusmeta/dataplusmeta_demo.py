@@ -1,9 +1,8 @@
 """
-Using DataPlusMeta to read IEC 61853-1 matrix measurements
-==========================================================
+Using DataPlusMeta files
+========================
 
-This script demonstrates reading IEC 61853-1 matrix measurements
-stored in the DataPlusMeta format.
+Read a matrix of efficiency measurements and associated meta data.
 
 Copyright (c) 2019-2020 Anton Driesse, PV Performance Labs.
 """

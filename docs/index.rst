@@ -11,12 +11,12 @@ and so, in a small way, contribute to the transition from fossil fuels
 to renewable sources--and solar energy in particular.
 
 The current version of this package is found in the github repository
-`pvplabs/pvpltools <https://github.com/pvplabs/pvpltools>`.
+`pvplabs/pvpltools <https://github.com/pvplabs/pvpltools>`_ .
 Prior to 2024, the code was made available in
 `adriesse/pvpltools-python <https://github.com/adriesse/pvpltools-python>`_ .
 This older repository will remain in place, but will not be updated.
 
-The package ``pvpltools`` is compatible with and complementary to
+``pvpltools`` is compatible with and complementary to
 `pvlib python <https://pvlib-python.readthedocs.io>`_.
 
 .. toctree::

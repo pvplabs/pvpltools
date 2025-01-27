@@ -2,7 +2,7 @@
 Module efficiency models
 ========================
 
-Primer on the :py:mod:`pvpltools.module_efficiency` submodule.
+Fit seven models to sample measurements and find the best one.
 """
 
 from pvpltools.module_efficiency import (
