@@ -1,5 +1,7 @@
-Historical notes prior to the first PyPI release
-========================================
+Historical notes
+================
+
+Changes prior to the first PyPI release.
 
 2021-10-17
 ^^^^^^^^^^

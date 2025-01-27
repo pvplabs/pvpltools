@@ -19,7 +19,7 @@ authors = [
   {name = "Anton Driesse", email = "anton.driesse@pvperformancelabs.com"},
 ]
 description = "Useful tools for photovoltaics and beyond."
-readme = "README.md"
+readme = "README_PYPI.md"
 keywords = ["photovoltaics", "tools", "pv"]
 classifiers = [
   "Programming Language :: Python",
