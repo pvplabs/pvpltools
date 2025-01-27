@@ -2,11 +2,11 @@
 
 .. currentmodule:: pvpltools
 
-Energy rating
-=============
+Energy rating (IEC 61853)
+=========================
 
 This module implements the energy rating calculations
-described in standard IEC-61853.
+described in standard IEC 61853.
 
 The four main calculation steps are:
 

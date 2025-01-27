@@ -1,5 +1,5 @@
-dataplusmeta submodule
------------------------
+DataPlusMeta:
+-------------
 
-This submodule contains examples related to the
+Using functions in the
 :py:mod:`pvpltools.dataplusmeta` submodule.

@@ -1,5 +1,5 @@
-module_efficiency submodule
-----------------------------
+PV Module Efficiency
+--------------------
 
-This submodule contains examples related to the
+Using functions in the
 :py:mod:`pvpltools.module_efficiency` submodule.

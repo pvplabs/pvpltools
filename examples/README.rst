@@ -1,4 +1,5 @@
 Example Gallery
 ===============
 
-Here you will find examples on how to use the library. Feel free to contribute!
+Here you will find examples that demonstrate what various functions
+can do, and at the same time show you how to use them.
