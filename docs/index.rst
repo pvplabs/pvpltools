@@ -1,7 +1,15 @@
-PV Performance Labs Tools for Python
-====================================
+PV Performance Labs' Tools for Python
+=====================================
 
-PV Performance Labs Tools for Python
+This package, ``pvpltools``, makes available a collection of useful
+software components and functions created by PV Performance Labs.
+Many were developed in the context of consulting or research projects,
+sometimes as a necessity, and sometimes just to make life easier.
+
+The aim of this package is to make life easier for people facing similar needs and so, in
+a small way, contribute to the transition from fossil fuels
+to renewable sources--and solar energy in particular.
+
 
 .. toctree::
    :maxdepth: 1
