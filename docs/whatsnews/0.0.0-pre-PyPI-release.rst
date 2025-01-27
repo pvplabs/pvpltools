@@ -10,9 +10,9 @@ News items prior to the first PyPI release.
 ^^^^^^^^^^
 
 * More proof that these tools are useful!
-The module efficiency functions were put to good use in
-`this new study by Lelia Deville and her colleagues
-<https://doi.org/10.1002/pip.3763>`_.
+  The module efficiency functions were put to good use in
+  `this new study by Lelia Deville and her colleagues
+  <https://doi.org/10.1002/pip.3763>`_.
 
 
 2021-10-17
