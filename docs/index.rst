@@ -6,14 +6,21 @@ software components and functions created by PV Performance Labs.
 Many were developed in the context of consulting or research projects,
 sometimes as a necessity, and sometimes just to make life easier.
 
-The aim of this package is to make life easier for people facing similar needs and so, in
-a small way, contribute to the transition from fossil fuels
+The aim of this package is to make life easier for people facing similar needs
+and so, in a small way, contribute to the transition from fossil fuels
 to renewable sources--and solar energy in particular.
 
-``pvpltools`` is compatible with and complementary to
- `pvlib python <https://pvlib-python.readthedocs.io>`_.
+The current version of this package is found on github as
+`pvplabs/pvpltools
+<https://github.com/pvplabs/pvpltools>`.
+Prior to 2024, the code was published as
+`adriesse/pvpltools-python
+<https://github.com/adriesse/pvpltools-python>`_.
+This older repository will remain in place, but will not be updated.
 
-https://pvlib-python.readthedocs.io/en/stable/
+
+The package ``pvpltools`` is compatible with and complementary to
+`pvlib python <https://pvlib-python.readthedocs.io>`_.
 
 .. toctree::
    :maxdepth: 1
