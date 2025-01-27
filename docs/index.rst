@@ -7,8 +7,7 @@ Many were developed in the context of consulting or research projects,
 sometimes as a necessity, and sometimes just to make life easier.
 
 The aim of this package is to make life easier for people facing similar needs
-and so, in a small way, contribute to the transition from fossil fuels
-to renewable sources--and solar energy in particular.
+and thereby ultimately support the accellerated deployment of photovoltaic power systems.
 
 The current version of this package is found in the github repository
 `pvplabs/pvpltools <https://github.com/pvplabs/pvpltools>`_ .
