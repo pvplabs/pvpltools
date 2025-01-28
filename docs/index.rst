@@ -33,6 +33,7 @@ Table of contents
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    user_guide/index
    api_reference/index
