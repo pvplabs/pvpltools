@@ -7,7 +7,7 @@ API Reference
 =============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    module_efficiency
    power_conversion
