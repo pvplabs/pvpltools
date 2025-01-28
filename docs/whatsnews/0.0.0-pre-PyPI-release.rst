@@ -1,10 +1,9 @@
 
 .. note::
-    The news items below originalted prior to the first PyPI release.
+    The entries below predate the first PyPI release.
 
 Historical notes
-================
-
+----------------
 
 
 2024-02-13

@@ -1,5 +1,5 @@
 v0.1.0 (2025-02-01)
-===================
+-------------------
 
 * First official release of the project on PyPI.
 * Documentation published on readthedocs.org.

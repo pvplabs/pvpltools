@@ -1,5 +1,5 @@
-How to contribute
-=================
+Development
+===========
 
 If you would like to contribute to this project,
 please consider creating an issue on github first,
