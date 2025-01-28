@@ -38,7 +38,7 @@ Useful tools for photovoltaics and beyond!
 
 Latest news
 -----------
-2024-02-13: More proof that these tools are useful!  The module efficiency functions were put to good use in [this new study by Lelia Deville and her colleagues][101]: 
+2024-02-13: More proof that these tools are useful!  The module efficiency functions were put to good use in [this new study by Lelia Deville and her colleagues][101]:
 
 [101]: https://doi.org/10.1002/pip.3763
 
@@ -46,7 +46,7 @@ Latest news
 Copyright
 ---------
 
-Copyright (c) 2019-2020 Anton Driesse, PV Performance Labs.
+Copyright (c) 2019-2025 Anton Driesse, PV Performance Labs.
 
 
 License
