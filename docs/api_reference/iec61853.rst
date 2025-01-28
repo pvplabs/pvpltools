@@ -10,16 +10,16 @@ described in standard IEC 61853.
 
 The four main calculation steps are:
 
-    1. Calculate the angle-of-incidence correction using the functions:
-        - martin_ruiz()
-        - martin_ruiz_diffuse()
-    2. Evaluate the spectral factor using the functions:
-        - convert_to_banded()
-        - calc_spectral_factor()
-    3. Estimate the operating temperature using the function:
-        - faiman()
-    4. Determine the module efficiency using the class:
-        - BilinearInterpolator()
+1. Calculate the angle-of-incidence correction using the functions:
+    - martin_ruiz()
+    - martin_ruiz_diffuse()
+2. Evaluate the spectral factor using the functions:
+    - convert_to_banded()
+    - calc_spectral_factor()
+3. Estimate the operating temperature using the function:
+    - faiman()
+4. Determine the module efficiency using the class:
+    - BilinearInterpolator()
 
 .. autosummary::
    :toctree: generated/

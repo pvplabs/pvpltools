@@ -11,7 +11,7 @@ sometimes out of necessity, and sometimes just to make life easier.
 The aim of this package is to make life easier for other people facing similar needs
 and thereby, in a small way, support the accelerated deployment of photovoltaic power systems.
 
-The current version of this package is found in the github repository
+The current version of this package is found in the GitHub repository
 `pvplabs/pvpltools <https://github.com/pvplabs/pvpltools>`_ .
 Prior to 2024, the code was made available in
 `adriesse/pvpltools-python <https://github.com/adriesse/pvpltools-python>`_ .
