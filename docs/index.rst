@@ -28,9 +28,6 @@ License
 Feel free to let us know if this license causes any problems!
 
 
-Table of contents
------------------
-
 .. toctree::
    :maxdepth: 1
    :hidden:
