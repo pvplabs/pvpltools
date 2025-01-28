@@ -1,13 +1,11 @@
 
-----
-
-
-----
+.. note::
+    The news items below originalted prior to the first PyPI release.
 
 Historical notes
 ================
 
-News items prior to the first PyPI release.
+
 
 2024-02-13
 ^^^^^^^^^^
