@@ -1,9 +1,11 @@
 Quick overview
 ==============
 
-This project aims to allow for easy access to useful tools for photovoltaics.
-It is a collection of utilities created by PV Performance Labs.
-Users are encouraged to contribute to the project by submitting issues or pull
-requests, so please, don't hesitate to reach out!
+Currently, there are four groups of functions related to the topics:
 
-.. @Anton TODO, add more content as desired. Update index.rst with filenames.
+- PV module efficiency: modeling efficiency as a function of irradiance and temperature
+- power conversion: efficiency losses in inverters, but not limited to inverters
+- energy rating: the (evolving) IEC-61853 method for rating PV modules
+- DataPlusMeta: read and write columnar data together with important metadata in a human-readable text file
+
+

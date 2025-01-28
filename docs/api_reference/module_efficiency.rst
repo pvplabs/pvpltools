@@ -2,8 +2,17 @@
 
 .. currentmodule:: pvpltools
 
-Module efficiency modelling
-===========================
+====================
+PV module efficiency
+====================
+
+This module contains implementations of several PV module efficiency models.
+
+These models have a common purpose, which is to predict the efficiency at
+maximum power point as a function of the main operating conditions:
+effective irradiance and module temperature.
+
+A function to fit any of these models to measurements is also provided.
 
 .. autosummary::
    :toctree: generated/

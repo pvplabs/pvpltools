@@ -1,9 +1,12 @@
-How to contribute
-=================
+Development
+===========
 
-Thanks for considering contributing to the project! We welcome contributions from
-everyone. Please read the following guidelines before contributing, and in case
-of any questions, don't hesitate to reach out.
+If you would like to contribute to this project,
+please consider creating an issue on github first,
+or contact the maintainer(s) by email to discuss.
+
+We try to follow the guidelines below ourselves
+and would expect the same from you!
 
 .. contents::
    :local:

@@ -7,10 +7,9 @@ API Reference
 =============
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
-   dataplusmeta
-   iec61853
    module_efficiency
    power_conversion
+   iec61853
+   dataplusmeta

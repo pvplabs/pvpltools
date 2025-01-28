@@ -1,8 +1,6 @@
-v0.1.0
-======
-
-2024-15-01
+v0.1.0 (very soon!)
+-------------------
 
 * First official release of the project on PyPI.
+* Documentation published on readthedocs.org.
 
-.. note:: Feedback and contributions are welcome!
