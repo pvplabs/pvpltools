@@ -11,7 +11,6 @@ dependencies = [
   "pandas>=1.5.0",
   "pvlib>=0.8.1",
   "ruamel.yaml>=0.15.0",
-  "matplotlib",
 ]
 requires-python = ">=3.8"
 authors = [
@@ -28,6 +27,7 @@ classifiers = [
 
 [project.optional-dependencies]
 examples = [
+    "matplotlib",
     "openpyxl",
     ]
 test = [
@@ -42,6 +42,8 @@ docs = [
     "sphinx_toggleprompt~=0.5.0",
     "sphinx_favicon~=1.0.0",
     "sphinx-copybutton~=0.5.0",
+    "matplotlib",
+    "openpyxl",
 ]
 all = ["pvpltools[examples,test,docs]"]
 
