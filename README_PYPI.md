@@ -2,7 +2,7 @@
 
 *Useful tools for photovoltaics and beyond!*
 
-This package, ``pvpltools``, makes available a collection of useful
+This package, **pvpltools**, makes available a collection of useful
 software components and functions created by Anton Driesse of PV Performance Labs.
 Many were developed in the context of consulting or research projects,
 sometimes as a necessity, and sometimes just to make life easier.
@@ -16,5 +16,3 @@ This older repository will remain in place, but will not be updated.
 
 **pvpltools** is compatible with and complementary to
 **pvlib python** (https://pvlib-python.readthedocs.io).
-
-
