@@ -79,14 +79,16 @@ Parts of this repository have been developed
 in the context of consulting or research projects,
 sometimes as a necessity, and sometimes just to make life easier.
 
-I would to acknowledge funding and/or encouragement to publish open source code
+The development of this package has not been funded directly,
+but I nevertheless want to acknowledge research project funding
+and/or encouragement to publish open source code
 from the following organizations:
 
  - Sandia National Laboratories
  - United States Department of Energy
  - Fraunhofer Institute for Solar Energy
  - German Aerospace Center
- -
+ - German Ministry for Economic Affairs and Climate Action
 
 
 I also acknowledge and thank all the contributors to pvlib-python,
@@ -99,6 +101,6 @@ Getting help
 The first place to look is https://pvpltools.readthedocs.io/en/latest/.
 If it's not adequately explained there, have a look at
 the source code--if you're a user, you must be a programmer!
-If all else fails, send me an email.
+Still confused? Send me an email.
 
 For commercial use, extended support and related services are available.
