@@ -109,6 +109,10 @@ mathjax3_config = {
 # https://pydata-sphinx-theme.rtfd.io/en/latest/user_guide/configuring.html
 
 html_theme_options = {
+    "logo": {
+        "text": "PV Performance Labs",
+        "image_dark": "static/pvplabs_logo-dark.svg",
+    },
     "github_url": "https://github.com/pvplabs/pvpltools",
     "icon_links": [
         {

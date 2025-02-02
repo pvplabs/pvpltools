@@ -1,6 +1,9 @@
-v0.1.0 (very soon!)
+v0.1.0 (2025-02-02)
 -------------------
 
-* First official release of the project on PyPI.
-* Documentation published on readthedocs.org.
+* First release of pvpltools on PyPI.
 
+  * Same functionality as adriesse/pvpltools-python
+  * Tested on Python 3.8-?
+
+* Documentation published on readthedocs.org.
