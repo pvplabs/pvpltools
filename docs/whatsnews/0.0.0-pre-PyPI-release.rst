@@ -35,14 +35,14 @@ Historical notes
 
 * The new module ``module_efficiency.py`` contains functions for:
 
-    - the new ADR model
-    - HEY
-    - MotherPV
-    - PVGIS
-    - MPM5
-    - MPM6
-    - bilinear
-    - fitting any of the models to measurements
+  * the new ADR model
+  * HEY
+  * MotherPV
+  * PVGIS
+  * MPM5
+  * MPM6
+  * bilinear
+  * fitting any of the models to measurements
 
 
 2020-02-29

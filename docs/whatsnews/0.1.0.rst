@@ -1,9 +1,12 @@
 v0.1.0 (2025-02-02)
 -------------------
 
-* First release of pvpltools on PyPI.
+First release of pvpltools on PyPI.
 
-  * Same functionality as adriesse/pvpltools-python
-  * Tested on Python 3.8 - 3.13
+* Same functionality as adriesse/pvpltools-python
+* Tested on Python 3.8 - 3.13
+* Documentation published on readthedocs.org
 
-* Documentation published on readthedocs.org.
+Many thanks to Echedey Luis (:ghuser:`echedey-ls`) for setting the infrastructure up!
+
+The stage is now set for adding some new functionality...
