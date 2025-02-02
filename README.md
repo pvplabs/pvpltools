@@ -1,4 +1,4 @@
-# PV Performance Labs Tools for Python
+# PV Performance Labs Tools for PV
 
 *Useful tools for photovoltaics and beyond!*
 
@@ -64,7 +64,7 @@ When referring to this software in an academic or commercial context,
 please use a citation similar to the following:
 
   A. Driesse,
-  "PV Performance Labs Tools for Python", (2025), GitHub repository,
+  "PV Performance Labs Tools for PV", (2025), GitHub repository,
   https://github.com/pvplabs/pvpltools
 
 When referring to specific functions, docs strings or algorithms,
