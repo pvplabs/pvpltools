@@ -1,5 +1,5 @@
-PV Performance Labs Tools for Python
-=====================================
+PV Performance Labs Tools for PV
+================================
 
 *Useful tools for photovoltaics and beyond!*
 
