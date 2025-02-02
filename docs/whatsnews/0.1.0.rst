@@ -7,6 +7,8 @@ First release of pvpltools on PyPI.
 * Tested on Python 3.8 - 3.13
 * Documentation published on readthedocs.org
 
-Many thanks to Echedey Luis (:ghuser:`echedey-ls`) for setting the infrastructure up!
+Many thanks to
+`Echedey Luis <https://github.com/echedey-ls>`_
+for helping me get this set up!
 
 The stage is now set for adding some new functionality...
