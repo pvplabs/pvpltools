@@ -111,7 +111,7 @@ mathjax3_config = {
 html_theme_options = {
     "logo": {
         "text": "PV Performance Labs",
-        "image_dark": "static/pvplabs_logo-dark.svg",
+        "image_dark": "static/pvplabs_logo_dark.png",
     },
     "github_url": "https://github.com/pvplabs/pvpltools",
     "icon_links": [
